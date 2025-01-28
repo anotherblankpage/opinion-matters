@@ -1,0 +1,9 @@
+.two-column-content {
+    .background--light {
+        margin: 0 -1.8rem;
+        @include media-breakpoint-down(md) {
+            margin: 0;
+        }
+    }
+
+}

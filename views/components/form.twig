@@ -1,0 +1,16 @@
+{% if source.background_color == 'white' %}
+    {% set bgColor = 'bg-mono-100' %}
+{% elseif source.background_color == 'primary' %}
+    {% set bgColor = 'bg-primary-700' %}
+{% elseif source.background_color == 'dark-primary' %}
+    {% set bgColor = 'bg-primary-700' %}
+{% elseif source.background_color == 'dark' %}
+    {% set bgColor = 'bg-mono-600' %}
+{% else %}
+    {% set bgColor = '' %}
+{% endif %}
+<div class="form-wrapper {{ source.display_type == 'box' ? 'boxed' : ''}}">
+
+{{ function('do_shortcode', source.shortcode) }}
+
+</div>

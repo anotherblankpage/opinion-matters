@@ -1,0 +1,58 @@
+{
+    "key": "group_6531c7264a6fc",
+    "title": "[Block Settings] Slider",
+    "fields": [
+        {
+            "key": "field_6531c7264fc90",
+            "label": "Block Settings",
+            "name": "block_settings",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_6513aa9dad790",
+                "field_6513aabbad791",
+                "field_658110a716f1e",
+                "field_6525aa33e212b",
+                "field_6525ace04faa3",
+                "field_66d21ab40816e",
+                "field_65244bb8ec581",
+                "field_65244bc8ec582",
+                "field_65244122bb8e2",
+                "field_652441e8bb8e3",
+                "field_66d105fd03f0c",
+                "field_66d8e881e22d5"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1725504173
+}

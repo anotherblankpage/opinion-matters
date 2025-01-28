@@ -1,0 +1,118 @@
+{#
+  Base Block used for layout related changes, such as full width, background images, etc.
+  For block settings, they are calculated and done here and used in the blocks relevant to that setting.
+#}
+
+{# Visibility #}
+
+
+{# Padding Settings #}
+{% set padding_top = fields.separate_padding ? fields.top_padding : fields.both_padding %}
+{% set padding_bottom = fields.separate_padding ? fields.bottom_padding : fields.both_padding %}
+
+{# Vertical Alignment #}
+{% set vertical_alignment = 'align-items-' ~ fields.vertical_alignment %}
+
+{# Reverse Row #}
+{% set reverse_row = fields.reverse_row ? 'abp-grid__reverse-row' : '' %}
+{% set mobile_reverse_row = fields.mobile_reverse_row ? 'abp-grid__reverse-row-mobile' : '' %}
+
+{# Two Column Scaling #}
+{% if fields.column_scaling == '75' %}
+  {% set grid_scale = 'scale-75' %}
+{% elseif fields.column_scaling == '84' %}
+  {% set grid_scale = 'scale-84' %}
+{% else %}
+  {% set grid_scale = 'scale-66' %}
+{% endif %}
+
+{# Single Column Width #}
+{% set column_width = fields.column_width %}
+
+{# Background Color #}
+{% if fields.background_color == 'light' %}
+  {% set background_color = 'background--light' %}
+{% elseif fields.background_color == 'dark' %}
+  {% set background_color = 'background--dark' %}
+{% elseif fields.background_color == 'primary' %}
+  {% set background_color = 'background--primary' %}
+{% endif %}
+
+{# Container Size #}
+{% if fields.container_size == 'full' %}
+  {% set container = 'container--fluid' %}
+{% elseif fields.container_size == 'large' %}
+  {% set container = 'container--large' %}
+{% elseif fields.container_size == 'small' %}
+  {% set container = 'container--small' %}
+{% else %}
+  {% set container = 'container' %}
+{% endif %}
+
+{# Container Margins #}
+{% if fields.container_margins == 'large' %}
+  {% set container_margins = 'mx-lg-6' %}
+{% elseif fields.container_margins == 'none' %}
+  {% set container_margins = 'mx-lg-0' %}
+{% else %}
+  {% set container_margins = 'mx-lg-4' %}
+{% endif %}
+
+{# Container Mobile Margins #}
+{% if fields.container_mobile_margins == 'large' %}
+  {% set container_mobile_margins = 'mx-6' %}
+{% elseif fields.container_mobile_margins == 'none' %}
+  {% set container_mobile_margins = 'mx-0' %}
+{% else %}
+  {% set container_mobile_margins = 'mx-4' %}
+{% endif %}
+
+
+{% if not fields.block_visibility.desktop and not fields.block_visibility.mobile %}
+  {% set block_visibility = '' %}
+{% elseif not fields.block_visibility.desktop and fields.block_visibility.mobile %}
+  {% set block_visibility = 'd-none d-md-flex' %}
+{% elseif fields.block_visibility.desktop and not fields.block_visibility.mobile %}
+  {% set block_visibility = 'd-flex d-md-none' %}
+{% else %}
+  {% set block_visibility = 'd-none' %}
+{% endif %}
+
+
+{# Main Block Container - For padding, extra classes #}
+<section id="{{ fields.id|sanitize|default(block.id) }}" class="content-block {{ block_name }} {{ content_block_classes }} {{ block_visibility }}" >
+  {# BLOCK STYLES #}
+
+  <style>
+    #{{ fields.id|sanitize|default(block.id) }} {
+      margin-top: {{ fields.top_margin ? fields.top_margin : '0' }};
+      padding-top: {{ padding_top ~ 'px'}};
+      padding-bottom: {{ padding_bottom ~ 'px' }};
+      @media (max-width: 1025px) {
+        padding-top: {{ padding_top/1.5 ~ 'px'}};
+        padding-bottom: {{ padding_bottom/1.5 ~ 'px' }};
+      }
+      @media (max-width: 768px) {
+        padding-top: {{ padding_top/2 ~ 'px'}};
+        padding-bottom: {{ padding_bottom/2 ~ 'px' }};
+      }
+    }
+  </style>
+
+  
+  
+  {# Inner Block Container - For background colors, side margins #}
+  <div class="content-block__inner d-flex {{ container_mobile_margins }} {{ container_margins }} {{ background_color }} {{ content_inner_block_classes }}">
+    {% if fields.background_image %}
+      <div class="content-block__background-image {{ fields.parallax_background ? 'parallax-background' : ''}} {{ fields.background_image.background_position }} {{ fields.background_image.background_size }}" style="background-image: url({{ fields.background_image.image['url'] }})"><div class="content-block__background-overlay {{ fields.background_image.overlay }}"></div></div>
+    {% endif %}
+    {# Container - For container size #}
+    <div class="{{ container }} w-100" data-aos="fade-up">
+      {{ block('content') }}
+    </div>
+  </div>
+</section>
+
+
+
+

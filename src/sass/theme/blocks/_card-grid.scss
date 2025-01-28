@@ -1,0 +1,102 @@
+.card-grid {
+    .card {
+        margin: calc($grid-gutter-width * 0.5) 0;
+        @include media-breakpoint-down(md) {
+            margin: 7.5px 0;
+        }
+    }
+    .col-md-6 {
+        @include media-breakpoint-down(sm) {
+            .card {
+                padding-top: 85%;
+            }
+        }
+    }
+}
+
+.offset-grid {
+	display: grid;
+	gap: $grid-gutter-width;
+    &.three-column {
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            ". clutch ."
+            "market clutch mad"
+            "market ht mad"
+            "boston ht chicago"
+            "boston ap chicago"
+            ". ap .";
+        .cell:nth-child(1) {
+            grid-area: clutch;
+        }
+        .cell:nth-child(2) {
+            grid-area: market;
+        }
+        .cell:nth-child(3) {
+            grid-area: mad;
+        }
+        .cell:nth-child(4) {
+            grid-area: boston;
+        }
+        .cell:nth-child(5) {
+            grid-area: ht;
+        }
+        .cell:nth-child(6) {
+            grid-area: chicago;
+        }
+        .cell:nth-child(7) {
+            grid-area: ap;
+        }
+        @include media-breakpoint-down(xl) {
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); 
+            padding-bottom: 13.2%;
+            grid-template-areas: unset;
+            .cell {
+                grid-area: unset !important;
+            }
+            .cell:nth-child(even) {
+                position: relative;
+                bottom: -50%;
+            }
+            .card {
+                padding-top: 70.868%;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 15px;
+            .cell:nth-child(even) {
+                bottom: 0;
+            }
+        }
+    }
+    &.two-column {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
+        padding-bottom: 13.2%;
+        .cell:nth-child(even) {
+            position: relative;
+            bottom: -50%;
+        }
+        .card {
+            padding-top: 70.868%;
+        }
+        @include media-breakpoint-down(md) {
+            .card {
+                padding-top: 85%;
+            }
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 15px;
+            .cell:nth-child(even) {
+                bottom: 0;
+            }
+        }
+    }
+    .card {
+        margin: 0;
+    }
+}

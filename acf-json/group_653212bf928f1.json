@@ -1,0 +1,101 @@
+{
+    "key": "group_653212bf928f1",
+    "title": "[Block Component] Form",
+    "fields": [
+        {
+            "key": "field_653212bfd2115",
+            "label": "Shortcode",
+            "name": "shortcode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Form shortcode",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_653212dbd2116",
+            "label": "Display Type",
+            "name": "display_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Box type will surround form in a box with padding.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "box": "Box"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65321309d2117",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Background color if box display type",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653212dbd2116",
+                        "operator": "==",
+                        "value": "box"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "primary": "Primary",
+                "dark-primary": "Darker Primary",
+                "dark": "Dark"
+            },
+            "default_value": "primary",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697781015
+}

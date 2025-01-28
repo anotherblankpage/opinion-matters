@@ -1,0 +1,87 @@
+{#
+/**
+ * Block Name: Heading
+ *
+ * 
+ */
+#}
+{% extends 'blocks/base-block.twig' %}
+
+{% set block_name = 'heading-block' %}
+{% set content_inner_block_classes = 'm-0' %}
+{% set content_block_classes = fields.height %}
+
+
+{% if fields.content_location == 'center' %}
+    {% set content_location = 'align-items-center justify-content-center text-center' %}
+{% elseif fields.content_location == 'left' %}
+    {% set content_location = 'align-items-center justify-content-start text-start' %}
+{% elseif fields.content_location == 'right' %}
+    {% set content_location = 'align-items-center justify-content-end text-end' %}
+{% elseif fields.content_location == 'bottom_left' %}
+    {% set content_location = 'align-items-end justify-content-start' %}
+{% elseif fields.content_location == 'bottom_right' %}
+    {% set content_location = 'align-items-end justify-content-end' %}
+{% elseif fields.content_location == 'top_left' %}
+    {% set content_location = 'align-items-start justify-content-start' %}
+{% elseif fields.content_location == 'top_right' %}
+    {% set content_location = 'align-items-start justify-content-end' %}
+{% endif %}
+
+{% if fields.custom_padding.padding_top %}
+    {% set custom_padding_top = 'padding-top: ' ~ fields.custom_padding.padding_top ~ ';' %}
+{% endif %}
+{% if fields.custom_padding.padding_right %}
+    {% set custom_padding_right = 'padding-right: ' ~ fields.custom_padding.padding_right ~ ';' %}
+{% endif %}
+{% if fields.custom_padding.padding_bottom %}
+    {% set custom_padding_bottom = 'padding-bottom: ' ~ fields.custom_padding.padding_bottom ~ ';' %}
+{% endif %}
+{% if fields.custom_padding.padding_left %}
+    {% set custom_padding_left = 'padding-left: ' ~ fields.custom_padding.padding_left ~ ';' %}
+{% endif %}
+
+
+{% if fields.header_overlay.size %}
+    {% set header_overlay = 'max-width: ' ~ fields.header_overlay.size ~ ';' %}
+{% endif %}
+{% if fields.header_overlay.margin.margin_top %}
+    {% set overlay_margin_top = 'margin-top: ' ~ fields.header_overlay.margin.margin_top ~ ';' %}
+{% endif %}
+{% if fields.header_overlay.margin.margin_right %}
+    {% set overlay_margin_right = 'margin-right: ' ~ fields.header_overlay.margin.margin_right ~ ';' %}
+{% endif %}
+{% if fields.header_overlay.margin.margin_bottom %}
+    {% set overlay_margin_bottom = 'margin-bottom: ' ~ fields.header_overlay.margin.margin_bottom ~ ';' %}
+{% endif %}
+{% if fields.custom_padding.margin.padding_left %}
+    {% set overlay_margin_left = 'margin-left: ' ~ fields.header_overlay.margin.padding_left ~ ';' %}
+{% endif %}
+
+{% block content %}
+
+<div class="{{ block_name }}__wrapper d-flex {{ content_location }}" style="{{ custom_padding_top }}{{ custom_padding_right }}{{ custom_padding_bottom }}{{ custom_padding_left }}">
+    {# {% if fields.header_overlay.video %}
+        <div class="{{ block_name }}__video-background">
+            <video autoplay muted loop id="myVideo">
+                <source src="{{ fields.header_overlay.video.url }}" type="video/mp4">
+            </video>
+        </div>
+    {% endif %} #}
+    <div class="{{ block_name }}__content col-12  {{ fields.content ? '' : 'no-content' }}">
+    
+        <div>{{ fields.custom_title == 'custom' ? fields.title : post.title }}</div>
+        {% if fields.content %}
+            <div data-padding-top="180">
+                <p class="h4">{{ fields.content }}</p>
+            </div>
+        {% endif %}
+    </div>
+    {% if fields.header_overlay.image %}
+        <div class="{{ block_name }}__foreground-wrapper" style="{{ header_overlay }} {{ overlay_margin_top }} {{ overlay_margin_right }} {{ overlay_margin_bottom }} {{ overlay_margin_left }}">
+            <img class="{{ block_name }}__forground-image" src="{{ fields.header_overlay.image['url'] }}" alt="{{ fields.header_overlay.image['alt'] }}"/>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

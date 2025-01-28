@@ -1,0 +1,10 @@
+
+<div class="block-link__wrapper" data-padding-top="{{ source.padding }}" data-padding-bottom="{{ source.padding }}">
+   {% if source.content_type == 'case-study' %}
+      {% include 'components/partials/block-link-post-type.twig' with {'content': source.case_studies, 'taxonomy_slug': 'case_study_category'} %}
+   {% elseif source.content_type == 'insight' %}
+      {% include 'components/partials/block-link-post-type.twig' with {'content': source.insights, 'taxonomy_slug': 'insight_category'} %}
+   {% else %}
+      {% include 'components/partials/block-link-default.twig' %}
+   {% endif %}
+</div>

@@ -1,0 +1,14 @@
+{% set logos = source.logos %}
+<div class="logos no-events {{ source.layout == 'slider' ? 'slick visible' : ''}}" data-autoplayspeed="{{ source.autoplay_speed ? source.autoplay_speed : 750 }}" data-num-slides="{{ source.num_slides ? source.num_slides : 4 }}" data-padding-top="{{ source.padding ? source.padding : 0 }}" data-padding-bottom="{{ source.padding ? source.padding : 0 }}">
+    {% if source.layout != 'slider' %}
+        <div class="row align-items-center">
+    {% endif %}
+        {% for item in logos %}
+        <div class="{{ source.layout == 'slider' ? 'd-flex align-items-center' : 'col-4 col-md-2'}}  px-4 text-center">
+            <img class="grayscale" src="{{ item.image.url }}" alt="{{ item.immage.alt }}" />
+        </div>
+        {% endfor %}
+    {% if source.layout != 'slider' %}
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,52 @@
+{
+    "key": "group_653255d606ebb",
+    "title": "[Block Settings] Heading",
+    "fields": [
+        {
+            "key": "field_653255d60ab9c",
+            "label": "Block Settings",
+            "name": "block_settings",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_6513aa9dad790",
+                "field_6513aabbad791",
+                "field_658110a716f1e",
+                "field_65a73bc7475b5",
+                "field_6525aa33e212b",
+                "field_66d8e881e22d5"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1725491559
+}

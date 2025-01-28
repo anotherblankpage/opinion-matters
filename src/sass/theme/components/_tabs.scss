@@ -1,0 +1,55 @@
+.tabs {
+    gap: 8%;
+    .tab-active {
+       display: block;
+    }
+    .tab-inactive {
+       display: none;
+    }
+    &__menu {
+       flex: 0 0 42%;
+    }
+    &__title {
+       @include Transition;
+    }
+    &__toggle {
+       @include BodyRegular;
+       display: flex;
+       width: 100%;
+       padding: 24px 0;
+       border: none;
+       color: $mono-100;
+       text-align: left;
+       align-items: center;
+       background-color: transparent;
+       text-transform: uppercase;
+       outline: none;
+       border-top: 1px solid white;
+       justify-content: space-between;
+       pointer-events: none;
+       cursor: pointer;
+       &:hover {
+          .tabs__title {
+             color: $primary-500 !important;
+          }
+       }
+       &.collapsed {
+          pointer-events: auto;
+          .tabs__title {
+             color: $mono-600;
+          }
+          .tab-active {
+             display: none;
+          }
+          .tab-inactive {
+             display: block;
+          }
+       }
+    }
+    &__menu-item:last-child button{
+       border-bottom: 1px solid white;
+    }
+    p>.badge {
+       margin-bottom: 0;
+    }
+ }

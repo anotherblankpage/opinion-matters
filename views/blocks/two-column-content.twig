@@ -1,0 +1,64 @@
+{#
+/**
+ * Block Name: Two Column Content
+ *
+ * 
+ */
+#}
+{% extends 'blocks/base-block.twig' %}
+
+{% set block_name = 'two-column-content' %}
+
+{% block content %}
+
+{% set left_settings = fields.column_settings.left_column %}
+{% set right_settings = fields.column_settings.right_column %}
+
+{% if left_settings.top_margin %}
+    {% set custom_margin_top = 'margin-top: ' ~ left_settings.top_margin ~ ';' %}
+{% endif %}
+{% if left_settings.right_margin %}
+    {% set custom_margin_right = 'margin-right: ' ~ left_settings.right_margin  ~ ';' %}
+{% endif %}
+{% if left_settings.bottom_margin %}
+    {% set custom_margin_bottom = 'margin-bottom: ' ~ left_settings.bottom_margin  ~ ';' %}
+{% endif %}
+{% if left_settings.left_margin %}
+    {% set custom_margin_left = 'margin-left: ' ~ left_settings.left_margin  ~ ';' %}
+{% endif %}
+
+
+{% if right_settings.top_margin %}
+    {% set custom_margin_top = 'margin-top: ' ~ right_settings.top_margin ~ ';' %}
+{% endif %}
+{% if right_settings.right_margin %}
+    {% set custom_margin_right = 'margin-right: ' ~ right_settings.right_margin  ~ ';' %}
+{% endif %}
+{% if right_settings.bottom_margin %}
+    {% set custom_margin_bottom = 'margin-bottom: ' ~ right_settings.bottom_margin  ~ ';' %}
+{% endif %}
+{% if right_settings.left_margin %}
+    {% set custom_margin_left = 'margin-left: ' ~ right_settings.left_margin  ~ ';' %}
+{% endif %}
+
+
+<div class="abp-grid {{ mobile_reverse_row }} {{ reverse_row }} {{ grid_scale }} {{ vertical_alignment }}" style="{{ custom_margin_top }} {{ custom_margin_right }} {{ custom_margin_bottom }} {{ custom_margin_left }}">
+  <div class="grid-item">
+      <div class="column-wrapper background--{{ left_settings.background_color }}" data-padding-top="{{ left_settings.top_padding }}" data-padding-bottom="{{ left_settings.bottom_padding }}" data-padding-left="{{ left_settings.left_padding }}" data-padding-right="{{ left_settings.right_padding }}">
+        {% for content in fields.left_content %}
+          {% include 'components/flexible-content.twig' with {'content': content } %}
+        {% endfor %}
+      </div>
+  </div>
+
+  <div class="grid-item">
+    <div class="column-wrapper background--{{ right_settings.background_color }}" data-padding-top="{{ right_settings.top_padding }}" data-padding-bottom="{{ right_settings.bottom_padding }}" data-padding-left="{{ right_settings.left_padding }}" data-padding-right="{{ right_settings.right_padding }}">
+      {% for content in fields.right_content %}
+        {% include 'components/flexible-content.twig' with {'content': content } %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

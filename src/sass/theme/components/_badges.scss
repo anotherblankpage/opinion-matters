@@ -1,0 +1,58 @@
+.badge {
+    @include BodyMedium;
+    display: inline-block;
+    padding: 6px;
+    border: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.25em;
+    color: $mono-100;
+    box-shadow: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.84px;
+    border-radius: 6px;
+    outline: none;
+    .frosted-bg {
+        @include FrostedBG;
+    }
+    &.status {
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 3px;
+            margin-right: 12px;
+            background-color: $mono-100;
+        }
+        &.purple-status::before { background-color: $purple; }
+        &.violet-status::before { background-color: $violet; }
+        &.magenta-status::before { background-color: $magenta; }
+        &.teal-status::before { background-color: $teal; }
+        &.green-status::before { background-color: $green; }
+
+    }
+}
+
+.background--light, #tinymce {
+    .badge {
+        color: $mono-800;
+    }
+}
+p > .badge {
+    margin-bottom: 30px;
+}
+
+
+.timezone {
+    width: 100%;
+    max-width: 215px;
+    pointer-events: none;
+    height: 27px;
+    overflow: hidden;
+}

@@ -1,0 +1,62 @@
+{
+    "key": "group_65244fde20fdd",
+    "title": "[Block Settings] Two Column Content",
+    "fields": [
+        {
+            "key": "field_65244fde23fd9",
+            "label": "Block Settings",
+            "name": "block_settings",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_6513aa9dad790",
+                "field_6513aabbad791",
+                "field_658110a716f1e",
+                "field_6513aae6ad792",
+                "field_65865f3c4868d",
+                "field_652441fbbb8e4",
+                "field_652476ce2e8c7",
+                "field_65864f89e18a6",
+                "field_6525aa33e212b",
+                "field_6525ace04faa3",
+                "field_66d21ab40816e",
+                "field_65244bb8ec581",
+                "field_65244bc8ec582",
+                "field_65244122bb8e2",
+                "field_652441e8bb8e3",
+                "field_66d8e881e22d5"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1725642098
+}

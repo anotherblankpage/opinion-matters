@@ -1,0 +1,67 @@
+<div class="offcanvas offcanvas-start bg-mono-900 text-white" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenu">
+  <div class="offcanvas-header p-0">
+    <div class="row m-0 w-100">
+      <div class="offcanvas-header__inner col-12 col-md-6 border-bottom-mono-800 border-right-mono-800">
+        <a class="d-flex offcanvas__close align-items-center text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close"><span class="icon-btn md hover-btn alt"><i class="fa-solid fa-xmark"></i></span><span class="d-block text-white ms-2">Close</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="offcanvas-body p-0">
+    <div class="d-block d-md-flex h-100">
+      {# Navigation #}
+      <div class="col-12 col-md-6 p-0 mb-4 mb-md-0 border-right-mono-800">
+        <ul id="menu" class="menu__wrapper d-flex flex-column m-0 p-0">
+            {% for item in primary_menu.items %}
+                <li class="nav-link menu-link" style="transition-delay: {{ loop.index * 100 }}ms">
+                  <a class="nav-link__item d-block text-decoration-none h3 border-bottom-mono-800 p-4 {{ item.class }}" href="{{ item.url }}">
+            
+                      {{ item.title }}
+               
+                  </a>
+                </li>
+            {% endfor %}
+            {% for item in cta_menu.items %}
+                <li class="nav-link menu-link" style="transition-delay: {{ loop.index * 100 }}ms">
+                  <a class="nav-link__item d-block text-decoration-none h3 border-bottom-mono-800 p-4" href="{{ item.url }}">
+                    {{ item.title }}
+                  </a>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
+        
+        <div class="contact-wrapper d-flex flex-column align-items-start justify-content-start p-4">
+          <div>
+              <label>Email</label>
+              <a class="d-block h5 text-mono-400 text-decoration-none mt-3" href="mailto:{{ global.email }}">{{ global.email }}</a>
+          </div>
+
+          <div class="mt-5">
+              <label>Phone</label>
+              <a class="d-block h5 text-mono-400 text-decoration-none mt-3" href="tel:{{ global.phone }}" target="new">{{ global.phone }}</a>
+          </div>
+          
+          <div class="mt-5">
+              <label>Office</label>
+              <a class="d-block h5 text-mono-400 text-decoration-none mt-3" href="{{ global.google_maps }}" target="new">{{ global.address }}</a>
+          </div>
+
+          <ul class="mt-5 p-0">
+            {% for item in global.social_media %}
+                <li class="d-block"><a href="{{ item.url }}" target="new" class="text-decoration-none"><i class="fa-light fa-arrow-right-long me-3"></i>{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <h6 class="offcanvas__copyright text-small text-mono-400">© censuswide {{ now|date('Y') }}<span class="text-primary d-inline-block mx-2">-</span>{{ global.copyright }}</h6>
+
+
+      </div>
+    </div>
+
+    
+  </div>
+
+
+</div>

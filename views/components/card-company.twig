@@ -1,0 +1,37 @@
+{% set post = get_post(item.ID) %}
+{% set slogan = post.meta('slogan') %}
+{% set background = post.thumbnail %}
+{% set logo = post.meta('logo') %}
+{% set info = post.meta('additional_information') %}
+{% set link = post.meta('link') %}
+
+
+
+<div class="card">
+    <img class="card-img" src="{{ background.src ? background.src : theme.link ~ '/images/placeholder.png'|resize(1000)|towebp }}" alt="{{ background.alt ? background.alt : background.title }}" />
+    <div class="card-img-overlay {{ background.src ? '' : 'no-darken' }}">
+
+        <div class="card-meta">
+            <a class="icon-btn frosted-bg collapsed" data-bs-toggle="collapse" href=".card-toggle-{{ key }}"><i class="fa-regular fa-info card-toggle-{{ key }} no-animation collapse show"></i><i class="fa-regular fa-close no-animation card-toggle-{{ key }} collapse"></i></a>
+        </div>
+
+        {% if logo.url %}
+        <div class="card-center-overlay-wrapper">
+            <img class="card-img-logo card-toggle-{{ key }} no-animation collapse show" src="{{ logo.url }}" alt="{{ logo['alt'] ?  logo['alt'] :  logo['title'] }}" />
+        </div>
+        {% endif %}
+
+        <div class="card-content">
+            <div class="card-content__body">
+                <div class="card-toggle-{{ key }} collapse">
+                    <div class="h4">{{ post.title }}</div>
+                    <p class="text-small">{{ info }}</p>
+                </div>
+            </div>
+            <div class="card-content__footer">
+                <a class="arrow-link" href="{{ link }}" target="new">{{ link_title ? link_title : 'Visit Website' }}</a>
+            </div>
+        </div>
+
+    </div>
+</div>

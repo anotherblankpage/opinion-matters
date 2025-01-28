@@ -1,0 +1,81 @@
+.accordion {
+    padding-left: 15%;
+}
+.accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $mono-100;
+    &:first-of-type {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+    &:last-of-type {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+.accordion-button {
+    padding: 18px;
+    color: $primary-700;
+    background-color: transparent;
+    border-radius: 0 !important;
+    @include BodyMedium;
+    &:not(.collapsed),&:focus,&:active {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    &::after {
+        display: flex;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        color: $primary-700;
+        text-align: center;
+        content: '\f078';
+        font-family: 'Font Awesome 6 Pro';
+        align-items: center;
+        justify-content: center;
+        background-color: $secondary-100;
+        border-radius: 12px;
+        background-position: center;
+        background-image: none;
+    }
+    &:not(.collapsed) {
+        &::after {
+            color: $mono-100;
+            background-color: $primary-700;
+            background-image: none;
+        }
+    }
+}
+.accordion-body {
+    padding: 0 18px 18px 18px;
+}
+
+// Background Specific Styling
+.background--light {
+    .accordion-item {
+        border-bottom: 1px solid $secondary-100;
+    }
+}
+.background--dark {
+    .accordion-item {
+        border-bottom: 1px solid $primary-800;
+    }
+    .accordion-button {
+        color: $mono-100;
+        &::after {
+            background-color: $primary-800;
+            color: $mono-100;
+        }
+        &:not(.collapsed) {
+            &::after {
+                color: $primary-700;
+                background-color: $mono-100;
+            }
+        }
+    }
+    .accordion-body {
+        color: $primary-100;
+    }
+}

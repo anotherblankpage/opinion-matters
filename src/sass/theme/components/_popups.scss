@@ -1,0 +1,11 @@
+.video-popup {
+    .mfp-iframe-holder .mfp-content {
+        max-width: 1300px;
+    }
+
+    &.fullscreen {
+        .mfp-iframe-holder .mfp-content {
+            max-width: 100%;
+        }
+    }
+}

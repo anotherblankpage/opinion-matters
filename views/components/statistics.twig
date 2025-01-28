@@ -1,0 +1,23 @@
+{% set stats = source %}
+{% if stats.columns == 2 %}
+    {% set num_columns = 'col-12 col-md-6' %}
+{% elseif stats.columns == 3 %}
+    {% set num_columns = 'col-12 col-md-4' %}
+{% elseif stats.columns == 4 %}
+    {% set num_columns = 'col-12 col-md-3' %}
+{% elseif stats.columns == 6 %}
+    {% set num_columns = 'col-12 col-md-2' %}
+{% endif %}
+
+<div class="statistics-component d-flex flex-wrap justify-content-center">
+{% for stat in stats.statistic %}
+    <div class="statistics-component__item d-flex bg-white text-black {{ num_columns }} {{ stat.reverse_order ? 'flex-column-reverse' : 'flex-column' }}" data-padding-top="84" data-padding-bottom="84" data-padding-left="60" data-padding-right="60">
+        <div class="statistic-component__stat h2 m-0">{{ stat.stat }}</div>
+        <div class="statistic-component__meta">
+            {% if stat.title %}<div class="statistic-component__title text-mono-600">{{ stat.title }}</div>{% endif %}
+            {% if stat.description %}<div class="statistic-component__description">{{ stat.description }}</div>{% endif %}
+            {% if stat.icon %}<img class="staistic-component__icon" src="{{ stat.icon['url'] }}" alt="{{ stat.icon['alt'] }}" />{% endif %}
+        </div>
+    </div>
+{% endfor %}
+</div>

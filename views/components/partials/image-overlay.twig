@@ -1,0 +1,8 @@
+{% for src in source %}
+   {% set overlay = src.overlay %}
+   <div class="overlay-image__wrapper {{ overlay.behind ? 'behind-image' : ''}} {{ overlay.position }}" style="max-width: {{ overlay.size ? overlay.size : '333px' }}">
+      <div class="{{ overlay.image_style }}">
+         <img src="{{ overlay.image['url'] }}" alt="{{ overlay.image['alt'] }}" />
+      </div>
+   </div>
+{% endfor %}

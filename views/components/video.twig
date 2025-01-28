@@ -1,0 +1,31 @@
+<div class="video-wrapper {{ source.aspect_ratio }}" style="background-image: url({{ source.poster ? source.poster : theme.link ~ '/images/placeholder.png' }})">
+    {% if source.video_style == 'popup' %}
+        <div class="video-wrapper__popup">
+            {% if source.poster %}
+                <div class="video-wrapper__thumbnail grayscale"><img src="{{ source.poster|towebp }}" alt="{{ source.poster.alt ? source.poster.alt : source.poster.title }}"></div>
+            {% else %}
+                <div class="video-wrapper__background grayscale"  data-vbg="{{ source.video_url }}" data-vbg-autoplay="false"></div>
+            {% endif %}
+            <a class="play-btn bg-primary" data-popup="iframe" href="{{ source.video_url }}"><i class="fa-sharp fa-solid fa-play"></i></a>
+        </div>
+    {% else %}
+        <div class="video-wrapper__background" 
+        data-vbg="{{ source.video_url }}" 
+        data-vbg-autoplay="{{ source.autoplay ? true : false }}" 
+        data-vbg-start-at="{{ source.start_at ? source.start_at : 0 }}" 
+        data-vbg-end-at="{{ source.end_at ? source.end_at : 0 }}" 
+        data-vbg-play-button="{{ source.show_controls ? true : false }}" 
+        data-vbg-mute-button="{{ source.show_controls ? true : false }}"
+        data-vbg-poster="{{ source.poster ? source.poster : NULL }}">
+        </div>
+        {% if source.popup_style and source.popup_style != 'none' %}
+            <div class="video-background-popup hide">
+                {% if source.popup_style == 'icon' %}
+                    <a class="icon-btn md bg-mono-800 text-white" data-popup="iframe" data-popup-size="fullscreen" href="{{ source.video_url }}"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></a>
+                {% else %}
+                    <a class="pill-btn bg-mono-800 text-white" data-popup="iframe" data-popup-size="fullscreen" href="{{ source.video_url }}">Full Screen</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endif %}
+</div>

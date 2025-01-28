@@ -1,0 +1,12 @@
+{% set content = getPost(item.ID) %}
+
+<div class="accordion-item {{ loop.first ? 'expand' : '' }}">
+  <div class="accordion-trigger" data-bs-toggle="collapse" data-bs-target="#accordionContent-{{ blockId }}-{{ key }}-{{ loop.index }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}" aria-controls="accordionItem-{{ blockId }}-{{ key }}-{{ loop.index }}"></div>
+  <div class="accordion-item-bg w-100 h-100 d-flex align-items-end" style="background-image: url({{ content.thumbnail }})">
+      <div class="accordion-body w-100 bg-white p-3">
+        <h4 class="text-nowrap">{{ content.title }}</h4>
+        <p class="accordion-description text-mono-600 text-large text-md-nowrap">{{ content.meta('excerpt') }}</p>
+        <a class="accordion-link text-mono-900 text-decoration-none text-nowrap" href="{{ content.link }}">View Case Study <i class="fa-sharp fa-solid fa-arrow-right ms-3"></i> </a>
+      </div>
+  </div>
+</div>

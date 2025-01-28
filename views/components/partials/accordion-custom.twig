@@ -1,0 +1,10 @@
+<div class="accordion-item">
+    <div class="accordion-header" id="accordionItem-{{ blockId}}-{{ blockId }}-{{ key }}-{{ loop.index }}">
+        <button class="accordion-button {{ loop.first ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#accordionContent-{{ blockId }}-{{ key }}-{{ loop.index }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}" aria-controls="accordionItem-{{ blockId }}-{{ key }}-{{ loop.index }}">{{ item.title }}</button>
+    </div>
+    <div id="accordionContent-{{ blockId }}-{{ key }}-{{ loop.index }}" class="accordion-collapse collapse {{ loop.first ? 'show' : '' }}" aria-labelledby="accordionItem-{{ blockId }}-{{ key }}-{{ loop.index }}" data-bs-parent="#accordionParent-{{ blockId }}-{{ key }}">
+        <div class="accordion-body">
+            {{ item.content }}
+        </div>
+    </div>
+</div>

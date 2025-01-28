@@ -1,0 +1,46 @@
+{% set post = get_post(item.ID) %}
+{% set excerpt = post.meta('excerpt') %}
+{% set background = post.thumbnail %}
+{% set company = post.meta('company') %}
+{% set category = post.terms({taxonomy: 'project_category'}) %}
+{% set link = post.link %}
+{% set video = post.meta('featured_video') %}
+
+<div class="card">
+    <div class="card-img">
+        <img src="{{ background.src ? background.src : theme.link ~ '/images/placeholder.png'|resize(1000)|towebp }}" alt="{{ background.alt ? background.alt : background.title }}" />
+    </div>
+
+    <div class="card-img-overlay no-darken">
+
+        <div class="card-meta">
+            {% for cat in category %}
+                <div class="badge frosted-bg">{{ cat.name }}</div>
+            {% endfor %}
+            <div class="badge frosted-bg">{{ company[0].post_title }}</div>
+        </div>
+        
+        {% if video_type == 'popup' %}
+            <div class="card-center-overlay-wrapper">
+                {% if video %}
+                    <a class="play-btn frosted-bg" data-popup="iframe" href="{{ video }}"><i class="fa-sharp fa-solid fa-play"></i></a>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="card-content">
+            <div class="card-content__header">
+                <h2 class="card-title text-large">{{ post.title }}</h2>
+            </div>
+            {% if excerpt %}
+                <div class="card-content__body">
+                    <p class="text-small">{{ excerpt|truncate(12) }}</p>
+                </div>
+            {% endif %}
+            <div class="card-content__footer">
+                <a class="arrow-link no-margins" href="{{ link }}"><span class="card-toggle-{{ key }} no-animation collapse">Visit Page</span></a>
+            </div>
+        </div>
+
+    </div>
+</div>

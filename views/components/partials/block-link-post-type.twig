@@ -1,0 +1,32 @@
+{# BLOCK LINK CASE STUDY #}
+
+{% for block_link in content %}
+   {% set thePost = getPost(block_link.ID) %}
+   {% set postTerms = thePost.terms(taxonomy_slug) %}
+   <a class="block-link {{ source.link_style }}" href="{{ thePost.link }}" target="new">
+      <div class="block-link__content">
+         <div class="block-link__eyebrow purple">
+            {% if postTerms|length > 0 %}
+               <ul>
+                  {% for cat in postTerms %}
+                     <li>{{ cat.name }}</li>
+                  {% endfor %}
+               </ul>
+            {% endif %}
+         </div>
+         <div class="block-link__title h6 m-0 text-none">
+            {{ thePost.title }}
+         </div>
+      </div>
+      <div class="block-link__media">
+         {% if source.link_style == "image" %}
+            <img class="block-link__image" src="{{ thePost.thumbnail.src }}" alt="{{ thePost.thumbnail.alt ? thePost.thumbnail.alt : thePost.thumbnail.title }}" />
+         {% else %}
+            {% if thePost.link %}
+               <span class="icon-btn round lg bg-mono-900 ms-md-4 text-white"><i class="fa-light fa-arrow-right-long"></i></span>
+            {% endif %}
+         {% endif %}
+      </div>
+   </a>
+
+{% endfor %}

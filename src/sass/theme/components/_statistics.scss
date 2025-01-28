@@ -1,0 +1,29 @@
+.statistics-component {
+    &__item {
+        &:nth-child(odd) {
+            border-bottom: 12px solid $mono-400;
+            @include media-breakpoint-down(md) {
+                border-bottom: 3px solid $mono-900;
+            }
+        }
+        &:nth-child(even) {
+            border-top: 12px solid $mono-900;
+            @include media-breakpoint-down(md) {
+                border-top: none;
+                border-bottom: 3px solid $mono-900;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.background--light {
+    .statistics-component__item {
+        background-color: $mono-200 !important;
+        &:nth-child(odd) {
+            border-color: $primary-500 !important;
+        }
+    }
+}

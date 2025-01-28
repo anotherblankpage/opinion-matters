@@ -1,0 +1,28 @@
+{% set post = get_post(item.ID) %}
+{% set title = post.meta('title') %}
+{% set background = post.thumbnail %}
+{% set link = post.meta('link') %}
+
+
+<div class="card card--member card--compact">
+
+    <img class="card-img" src="{{ background.src ? background.src : theme.link ~ '/images/placeholder.png'|resize(1000)|towebp }}" alt="{{ background.alt ? background.alt : background.title }}" />
+
+    <div class="card-img-overlay no-darken">
+
+        <div class="card-content">
+            <div class="card-content__header">
+                <h2 class="card-title text-large">{{ post.title }}</h2>
+            </div>
+            <div class="card-content__body">
+                <div class="text-small">{{ title }}</div>
+            </div>
+            <div class="card-content__footer">
+                {% if link %}
+                    <a class="icon-btn bg-info text-white" href="{{ link }}" target="new"><i class="fa-brands fa-linkedin"></i></a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>

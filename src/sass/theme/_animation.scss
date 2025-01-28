@@ -1,0 +1,15 @@
+@mixin Transition($target: all, $duration: .35s, $easing: ease-in-out) {
+    transition: $target $duration $easing;
+}
+.no-animation {
+    &.collapsing, &.collapse, &.show {
+        transition: none !important;
+    }
+}
+
+[data-aos="fade"] {
+    opacity: 0;
+    &.aos-animate {
+        opacity: 1;
+    }
+}

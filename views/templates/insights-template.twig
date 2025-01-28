@@ -1,0 +1,52 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<header class="container--fluid mt-5 mt-md-0"  data-padding-top="238" data-padding-bottom="120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>{{ post.title }}</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container--large">
+        <div class="row">
+        {% for post in posts %}
+        {% set postTerms = post.terms('insight_category') %}
+        <article class="col-12 col-md-4 mb-4">
+            <a class="card text-decoration-none h-100" href="{{ post.link }}">
+                <div class="card-img-wrapper">
+                    <div class="card-meta">
+                        <div class="d-flex justify-content-end">
+                        {% for cat in postTerms %}
+                            <div class="badge {{ cat.slug }} bg-tint status {{ cat.meta('color') }}-status bg-tint--{{ cat.meta('color') }} ms-3">{{ cat.name }}</div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-img-overlay"></div>
+                    <img class="card-img" src="{{ post.thumbnail.src|resize(1000)|towebp }}" alt="{{ post.thumbnail.alt ? post.thumbnail.alt : post.thumbnail.title }}" />
+                </div>
+            
+                <div class="card-content">
+                    <div class="card-content__header">
+                        <h2 class="card-title text-large text-none">{{ post.title }}</h2>
+                    </div>
+                    <div class="block-link__eyebrow purple mt-4">
+                        <ul>
+                            <li>{{ post.date }}</li>
+                            <li>{{ post.meta('read_time') ? post.meta('read_time') : 5 }} MIN READ</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </article>
+
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

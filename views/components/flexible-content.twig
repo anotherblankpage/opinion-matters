@@ -1,0 +1,43 @@
+{% set flexContentKey = loop.index %}
+
+{# Image Component Aspect Ratio #}
+{% set width = imageWidth ? imageWidth : 568 %}
+
+{# Aspect ratio option for image component #}
+{% if content.aspect_ratio == 'landscape' %}
+    {% set height = imageHeight ? imageHeight : 326 %}
+{% else %}
+    {% set height = imageHeight ? imageHeight : 768 %}
+{% endif %}
+
+
+<div class="component-wrapper">
+    {% if content.acf_fc_layout == 'text' %}
+        <div class="text-wrapper">{{ content.text }}</div>
+    {% elseif content.acf_fc_layout == 'image' %}
+        {% if content.overlay_images|length > 0 %}
+            {% include 'components/partials/image-overlay.twig' with {'source': content.overlay_images } %}
+        {% endif %}
+        <div class="offset__wrapper {{ content.grayscale ? 'grayscale' : ''}}" data-padding-top="{{ content.outer_padding.padding_top }}" data-padding-right="{{ content.outer_padding.padding_right }}" data-padding-bottom="{{ content.outer_padding.padding_bottom }}" data-padding-left="{{ content.outer_padding.padding_left }}">
+        
+                {% include 'components/image.twig' with {'source': content.image, 'width': width, 'height': height, 'caption': content.caption, 'imageAspectRatio': content.aspect_ratio, 'imageShape': content.aspect_ratio, 'key': flexContentKey, 'blockId': block.id } %}
+   
+        </div>
+    {% elseif content.acf_fc_layout == 'accordion' %}
+        {% include 'components/accordion.twig' with {'source': content, 'key': flexContentKey, 'blockId': block.id} %}
+    {% elseif content.acf_fc_layout == 'video' %}
+        {% include 'components/video.twig' with {'source': content } %}
+    {% elseif content.acf_fc_layout == 'form' %}
+        {% include 'components/form.twig' with {'source': content } %}
+    {% elseif content.acf_fc_layout == 'statistics' %}
+        {% include 'components/statistics.twig' with {'source': content } %}
+    {% elseif content.acf_fc_layout == 'logos' %}
+        {% include 'components/logos.twig' with {'source': content } %}
+    {% elseif content.acf_fc_layout == 'block_link' %}
+        {% include 'components/block-link.twig' with {'source': content } %}
+    {% elseif content.acf_fc_layout == 'tabs' %}
+        {% include 'components/tabs.twig' with {'source': content, 'key': flexContentKey, 'blockId': block.id } %}
+    {% elseif content.acf_fc_layout == 'contact' %}
+        {% include 'components/contact.twig' with {'source': content, 'global': global } %}
+    {% endif %}
+</div>

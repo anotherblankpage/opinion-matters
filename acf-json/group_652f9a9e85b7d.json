@@ -1,0 +1,58 @@
+{
+    "key": "group_652f9a9e85b7d",
+    "title": "[Block Component] Contact Buttons",
+    "fields": [
+        {
+            "key": "field_652f9a9ea96fb",
+            "label": "Display",
+            "name": "display",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "email": "Email",
+                "phone": "Phone",
+                "address": "Address",
+                "social": "Social"
+            },
+            "default_value": [
+                "email",
+                "phone",
+                "address",
+                "social"
+            ],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "horizontal",
+            "toggle": 1,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1703189326
+}

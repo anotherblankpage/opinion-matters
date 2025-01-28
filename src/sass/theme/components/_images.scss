@@ -1,0 +1,189 @@
+img {
+    user-select: none; 
+}
+.img-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__caption {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 11;
+    }
+}
+
+
+// Specific rounding styling depending on the image position
+@include media-breakpoint-up(lg) {
+    .mx-lg-0 .justify-content-lg-start .img-wrapper {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .mx-lg-0 .justify-content-lg-end .img-wrapper {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+}
+
+// For ultra wide monitors
+.container--fluid {
+    .img-wrapper {
+        @include media-breakpoint-up(xxl) {
+            padding-top: 0 !important;
+            &.landscape {  height: 960px; }
+            &.narrow-landscape {  height: 420px; }
+        }
+    }
+}
+
+.grayscale {
+    filter: grayscale(1);
+}
+.offset {
+    &__wrapper {
+        position: relative;
+        z-index: 1;
+        // @include media-breakpoint-down(md) {
+        //     padding-top: 0 !important;padding-top
+        //     padding-right: 0 !important;padding-right
+        //     padding-left: 0 !important;padding-left
+        //     padding-bottom: 0 !important;padding-bottom
+        // }
+    }
+}
+.overlay-image {
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        max-width: 18vw;
+        min-width: 85px;
+        img {
+            width: 100%;
+        }
+        &.bottom-left {
+            top: unset;
+            right: unset;
+            bottom: 0;
+            left: 0;
+        }
+        &.bottom-center {
+            top: unset;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+        &.bottom-right {
+            top: unset;
+            right: 0;
+            bottom: 0;
+            left: unset;
+        }
+        &.center-left {
+            top: 50%;
+            right: unset;
+            bottom: unset;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        &.center-right {
+            top: 50%;
+            right: 0;
+            bottom: unset;
+            left: unset;
+            transform: translateY(-50%);
+        }
+        &.top-left {
+            top: 0;
+            right: unset;
+            bottom: unset;
+            left: 0;
+        }
+        &.top-center {
+            top: 0;
+            right: unset;
+            right: 0;
+            bottom: unset;
+            left: 0;
+            margin: 0 auto;
+        }
+        &.top-right {
+            top: 0;
+            right: -2px;
+            bottom: unset;
+            left:  unset;
+        }
+        &.behind-image {
+            z-index: 0;
+        }
+        .thumbnail {
+            position: relative;
+            padding-top: 100%;
+            border-radius: 12px;
+            overflow: visible;
+            z-index: 1;
+            @include media-breakpoint-down(lg) {
+                display: none !important;
+            }
+            &::before {
+                position: absolute;
+                top: -12px;
+                left: -12px;
+                z-index: 1;
+                display: block;
+                width: calc(100% + 24px);
+                height: calc(100% + 24px);
+                content: '';
+                border-radius: 12px;
+                background-color: $mono-900;
+            }
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.background--light {
+    .overlay-image__wrapper .thumbnail::before {
+        background-color: $mono-100;
+    }
+}
+
+.scale-down-shape {
+    @include media-breakpoint-down(md) {
+        width: 100%;
+        height: 100%;
+        max-width: 42px;
+        max-height: 42px;
+    }
+}
+
+.flipped {
+    transform: scaleX(-1);
+}

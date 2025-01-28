@@ -1,0 +1,98 @@
+.offcanvas {
+    width: 100% !important;
+    min-height: 100vh !important;
+    height: 100vh !important;
+    visibility: visible !important;
+    -webkit-clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+    transition: clip-path 0.8s cubic-bezier(1, 0.1, 0.6, 1);
+    &-backdrop {
+        opacity: 0 !important;
+    }
+    &.showing, &.show {
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100%  0);
+        clip-path: polygon(0 0, 0 100%, 100%  100%, 100%  0);
+    }
+    &.show {
+        transition: none; 
+        .menu-link {
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+    &__close {
+        cursor: pointer;
+    }
+    &-start {
+        transform: none !important;
+    }
+    .menu-link {
+        position: relative;
+        bottom: -30px;
+        opacity: 0;
+        transition: all .6s ease;
+    }
+    .nav-link {
+        &__item {
+            position: relative;
+            // height: 130px;height
+            overflow: hidden;
+            @include Transition;
+            &:hover {
+                background-color: $primary-500;
+                color: $mono-900;
+            }
+        }
+        &__text {
+            padding: 24px 15%;
+            @include Transition;
+            &.default {
+            }
+            &.hovered {
+                position: relative;
+                overflow: hidden;
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: -50px;
+                    z-index: 0;
+                    width: calc(100% + 100px);
+                    content: '';
+                }
+            }
+        }
+        &__text-wrapper {
+            position: relative;
+            top: 0;
+            @include Transition;
+        }
+    }
+    .contact-wrapper {
+        padding: 0 15%;
+    }
+    &-body {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        overflow-x: hidden;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    &-header__inner {
+        padding: 28px;
+    }
+    &__copyright {
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: 24px;
+        @include media-breakpoint-down(md) {
+            margin-right: auto;
+        }
+    }
+}
+
+.logged-in {
+    .offcanvas.offcanvas-start {
+        top: 32px;
+    }
+}

@@ -1,0 +1,52 @@
+{#
+/**
+ * Block Name: Card Grid
+ *
+ * 
+ */
+#}
+{% extends 'blocks/base-block.twig' %}
+
+{% set block_name = 'card-grid' %}
+
+{% set numColumn = fields.number_of_columns == '2' ? 'col-lg-6' : 'col-md-6 col-xl-4' %}
+{% set cellClass = fields.column_style == 'offset' ? 'cell' : 'col-12 ' ~ numColumn %}
+
+{% if fields.column_style == 'offset' %}
+    {% set rowClass = fields.number_of_columns == '2' ? 'offset-grid two-column' : 'offset-grid three-column' %}
+{% else %}
+  {% set rowClass = 'row justify-content-center' %}
+{% endif %}
+
+{% block content %}
+
+<div id="cardGrid-{{ block.id }}" class="{{ rowClass }}">
+    {% if fields.card_type == 'default' %}
+        {% for item in fields.cards %}
+        <div class="{{ cellClass }} {{ loop.last ? 'mb-5 mb-md-0' : '' }}" data-sr="bottom">
+            {% include 'components/card.twig' with {'item': item, 'link_title': 'Visit Website', 'key': block.id ~ loop.index} %}
+        </div>
+        {% endfor %}
+    {% elseif fields.card_type == 'company' %}
+        {% for item in fields.company_cards %}
+        <div class="{{ cellClass }} {{ loop.last ? 'mb-5 mb-md-0' : '' }}" data-sr="bottom">
+            {% include 'components/card-company.twig' with {'item': item, 'link_title': 'Visit Website', 'key': block.id ~ loop.index } %}
+        </div>
+        {% endfor %}
+    {% elseif fields.card_type == 'member' %}
+        {% for item in fields.member_cards %}
+        <div class="{{ cellClass }} {{ loop.last ? 'mb-5 mb-md-0' : '' }}" data-sr="bottom">
+            {% include 'components/card-member.twig' with {'item': item } %}
+        </div>
+        {% endfor %}
+    {% elseif fields.card_type == 'project' %}
+        {% for item in fields.project_cards %}
+        <div class="{{ cellClass }} {{ loop.last ? 'mb-5 mb-md-0' : '' }}" data-sr="bottom">
+            {% include 'components/card-project.twig' with {'item': item, 'video_type': fields.video_type } %}
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% set timeZones = ['London', 'New_York', 'San_Francisco', 'Dubai', 'Tokyo', 'Sydney', 'San_Francisco','Singapore'] %}
+<div class="d-none d-lg-flex align-items-center">
+   <ul class="p-0 m-0 timezone">
+      {% for city in timeZones %}
+         <li class="d-flex justify-content-end"><div class="badge bg-tint status purple-status dark"><span data-timezone="{{ city }}" class="time-container"></span> {{ city|replace({'_': ' '}) }}</div></li>
+      {% endfor %}
+   </ul>
+</div>

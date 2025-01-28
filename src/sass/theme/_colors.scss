@@ -1,0 +1,19 @@
+@mixin FrostedBG {
+    background-color: rgba(255,255,255,.25);
+    backdrop-filter: blur(5px);
+    color: $mono-100;
+}
+
+.text-primary-100 { color: $primary-100; }
+
+.bg-primary-600 { background-color: $primary-600; }
+.bg-primary-700 { background-color: $primary-700; }
+.bg-primary-800 { background-color: $primary-800; }
+.bg-primary-900 { background-color: $primary-900; }
+
+.bg-mono-800 { background-color: $mono-800; }
+.bg-mono-900 { background-color: $mono-900; }
+
+.grayscale {
+    filter: grayscale(1);
+}

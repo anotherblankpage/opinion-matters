@@ -1,0 +1,17 @@
+{% set accordion = source.accordion %}
+
+<div id="accordionParent-{{ blockId }}-{{ key }}" class="accordion {{ source.content_type }} {{ source.accordion_style }}" data-padding-top="{{ source.padding ? source.padding : 0 }}" data-padding-bottom="{{ source.padding ? source.padding : 0 }}">
+    {% if source.accordion_style == 'default' or source.content_type == 'custom' %}
+        {% for item in accordion %}
+            {% if source.accordion_style == 'vertical' %}
+                {% include 'components/partials/accordion-custom-vertical.twig' %}
+            {% else %}
+                {% include 'components/partials/accordion-custom.twig' %}
+            {% endif %}
+        {% endfor %}
+    {% elseif source.content_type == 'case-studies' %}
+        {% for item in source.case_studies %}
+            {% include 'components/partials/accordion-case-studies.twig' %}
+        {% endfor %}
+    {% endif %}
+</div>

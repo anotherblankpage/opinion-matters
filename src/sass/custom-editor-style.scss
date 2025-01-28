@@ -1,0 +1,184 @@
+//Add your own editor styles here or import additional files
+
+// Grab our child theme variables
+@import "theme/child_theme_variables";
+
+// Grab a few bootstrap assets so we can use mixins, variables, etc
+@import "assets/bootstrap5/functions";
+@import "assets/bootstrap5/variables";
+@import "assets/bootstrap5/maps";
+@import "assets/bootstrap5/mixins";
+@import "assets/bootstrap5/reboot";
+@import "assets/bootstrap5/root";
+@import "assets/bootstrap5/tables";
+@import "assets/bootstrap5/images";
+
+// Set up basic typography
+@import "assets/bootstrap5/type";
+
+// Set up bootstrap utilities
+@import "assets/bootstrap5/bootstrap-utilities";
+
+// Start bringing in colors and styles. 
+@import "assets/understrap/theme/colors";
+@import "assets/understrap/theme/blocks";
+
+
+//Components
+@import "theme/colors";
+@import "theme/fonts";
+@import "theme/animation";
+@import "theme/components/buttons";
+@import "theme/components/badges";
+
+// Fixes Gutenberg's cover block color picker.
+.components-circular-option-picker__option {
+	border-radius: 50%;
+}
+
+// Matches the page title font weight.
+.editor-post-title .editor-post-title__input{
+	font-size: $h1-font-size;
+	font-weight: $headings-font-weight;
+}
+
+// Gutenberg's max width
+.wp-block {
+	max-width: 1250px !important;
+}
+.is-root-container {
+    background-color: #e2e2e2;
+    width: calc(100% + 16px);
+	padding: 20px;
+    position: relative;
+    left: -8px;
+    bottom: -8px;
+}
+.editor-styles-wrapper {
+	background-color: #e2e2e2;
+}
+
+// ACF Styling
+@mixin ACFButton {
+	color: $mono-600 !important;
+	border-color: $mono-600 !important;
+	&:hover, &:focus, &:active {
+		background-color: $mono-600 !important;
+		color: $mono-100 !important;
+		box-shadow: 0 0 0 1px $mono-100, 0 0 0 3px $mono-600 !important;
+	}
+}
+.acf-tab-wrap {
+	overflow: hidden !important;
+}
+.acf-block-body {
+	box-shadow: 0 0 24px rgba(0,0,0,.15);
+	.acf-field-message:first-of-type {
+		background-color: #f9f9f9 !important;
+		& + .acf-field {
+			background-color: #f9f9f9 !important;
+			border-left: none !important;
+			input {
+				background: transparent;
+				border: none;
+				border-bottom: 1px solid #ccc;
+				border-radius: 0;
+				opacity: .75;
+			}
+		}
+		& + .acf-field + .acf-tab-wrap > .acf-tab-group {
+			border-top: none !important;
+		}
+	}
+	.acf-button {
+		@include ACFButton;
+	}
+}
+
+.wp-media-buttons {
+	.insert-media {
+		@include ACFButton;
+	}
+}
+.acf-relationship .list .acf-rel-item:hover {
+	background-color: $mono-600;
+	color: $mono-100;
+}
+.acf-tab-button {
+	&:hover {
+		color: $mono-600;
+	}
+}
+.acf-button-group {
+	label {
+		&:hover {
+			border-color: $mono-600;
+			color: $mono-600;
+		}
+		&.selected {
+			border-color: $mono-900;
+			background-color: $mono-600;
+			&:hover {
+				color: $mono-100;
+			}
+		}
+	}
+}
+.acf-input {
+	input {
+		&:focus {
+			border-color: $mono-600;
+			box-shadow: 0 0 0 1px $mono-600;
+		}
+	}
+}
+.acf-switch {
+	.acf-switch-on {
+		text-shadow: $mono-900 0 1px 0;
+	}
+	&.-on {
+		background-color: $mono-600;
+		border-color: $mono-900;
+		.acf-switch-on {
+			text-shadow: $mono-900 0 1px 0;
+		}
+		.acf-switch-slider {
+			border-color: $mono-900;
+		}
+	}
+	&:hover, &:focus, &.-focus {
+		border-color: $mono-600;
+		.acf-switch-off {
+			color: $mono-600;
+		}
+		.acf-switch-slider {
+			border-color: $mono-600;
+		}
+	}
+} 
+
+
+.acf-flexible-content {
+	.layout {
+		box-shadow: 0 0 12px rgba(0,0,0,.05);
+		.acf-fc-layout-order {
+			background-color: $mono-500;
+			color: $mono-100;
+		}
+	}
+	.ui-sortable-handle, .acf-fc-layout-handle {
+		background-color: #f9f9f9;
+		&:hover {
+			background-color: $mono-300;
+		}
+	}
+}
+.wp-editor-tabs {
+	.wp-switch-editor {
+		height: 35px !important;
+		width: 70px !important;
+		&:last-child {
+			margin-left: -1px;
+		}
+	}
+}

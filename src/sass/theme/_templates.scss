@@ -1,0 +1,45 @@
+.page-template {
+    header {
+        padding-top: 110px;
+        background-image: url('../images/censuswide_hero_image.png');
+        background-size: 100% auto;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+}
+.logged-in {
+    &.page-template header {
+        padding-top: 145px;
+    }
+}
+
+.single-insight {
+    .container {
+        h1,h2,h3,h4,h5,h6 {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                max-width: 506px;
+                height: 3px;
+                margin-top: 50px;
+                background: rgb(82,226,250);
+                background: linear-gradient(90deg, rgba(82,226,250,1) 0%, rgba(82,226,250,0) 100%);
+            }
+        }
+        img {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+        p {
+            padding-left: 30%;
+            @include media-breakpoint-down(lg) {
+                padding-left: 0;
+            }
+        }
+    }
+}

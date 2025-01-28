@@ -1,0 +1,182 @@
+.arrow-link, .mce-content-body .arrow-link[data-mce-selected] {
+    @include BodyMedium;
+    text-decoration: none;
+    color: $mono-900;
+    background-color: transparent;
+    box-shadow: none;
+    @include Transition;
+    &.shadow {
+        @include Shadow;
+    }
+    &::after {
+        display: inline-block;
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 42px;
+        color: $mono-100;
+        text-align: center;
+        content: '';
+        font-family: 'Font Awesome Kit';
+        margin-left: 24px;
+        background-color: $primary-700;
+        border-radius: 50%;
+        @include Transition;
+    }
+    &:hover {
+        &::after {
+            background-color: $primary-900;
+        }
+    }
+    &.no-margins {
+        &::after {
+            margin-left: 0;
+        }
+    }
+}
+
+
+.pill-btn, .mce-content-body a.pill-btn[data-mce-selected] {
+    @include BodySmall;
+    @include Transition;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    color: $mono-100;
+    box-shadow: none;
+    white-space: nowrap;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 100px;
+    outline: none;
+    &:hover {
+        color: $mono-100;
+        background-color: $primary-900;
+    }
+    &.light {
+        background-color: $mono-100;
+        color: $mono-800;
+        &:hover {
+            background-color: $mono-300;
+        }
+    }
+    &.wrap {
+        @include media-breakpoint-down(md) {
+            white-space: wrap;
+        }
+    }
+}
+@mixin IconBtn {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: none;
+    border-radius: 50%;
+    outline: none;
+    text-decoration: none;
+    i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        text-align: center;
+        transform: translateY(-50%);
+    }
+}
+
+.icon-btn {
+    @include IconBtn;
+    &.md {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+.play-btn {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    border: none;
+    font-size: 1.5rem;
+    box-shadow: none;
+    border-radius: 50%;
+    outline: none;
+    text-decoration: none;
+    i {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 5px;
+        margin: 0 auto;
+        text-align: center;
+        transform: translateY(-50%);
+    }
+}
+
+.peel-btn {
+    @include BodyMedium;
+    position: relative;
+    display: inline-block;
+    padding: 12px 44px 12px 24px !important;
+    color: $mono-100;
+    text-decoration: none;
+    -webkit-clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 24px), 100% 0);
+    clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 24px), 100% 0);
+    transition: all .15s ease;
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: $mono-900;
+        -webkit-clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 24px), 100% 0);
+        clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, 100% calc(100% - 24px), 100% 0);
+        transition: all .075s ease;
+        transition-delay: 0s;
+    }
+    &::after {
+        position: absolute;
+        top: calc(100% - 24px);
+        left: calc(100% - 20px);
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: $primary-700;
+        pointer-events: none;
+        transition: all .15s ease;
+    }
+    &:hover,&:active {
+        color: $mono-900;
+        &::before {
+            -webkit-clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0, calc(100% - 20px) 0);
+            clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0, calc(100% - 20px) 0);
+            transition-delay: .075s;
+        }
+        &::after {
+            top: 0;
+            left: 0;
+            -webkit-clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0, calc(100% - 20px) 0);
+            clip-path: polygon(0 0, 0 100%, calc(100% - 20px) 100%, calc(100% - 20px) 0, calc(100% - 20px) 0);
+        }
+    }
+}
+
+.background--dark {
+    .peel-btn::after {
+        background-color: $mono-100;
+    }
+}

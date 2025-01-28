@@ -1,0 +1,32 @@
+{#
+/**
+ * Block Name: Single Column Content
+ *
+ * 
+ */
+#}
+{% extends 'blocks/base-block.twig' %}
+
+{% set block_name = 'single-column-content' %}
+{% set column_settings = fields.single_column_settings.settings %}
+{% set imageWidth = 1680 %}
+
+{% block content %}
+
+<div class="d-flex justify-content-lg-{{ fields.column_position ? fields.column_position : 'center' }}">
+    <div class="col-12 col-lg-{{ column_width }} p-lg-0">
+        <div class="column-wrapper background--{{ column_settings.background_color }}" data-padding-top="{{ column_settings.top_padding }}" data-padding-bottom="{{ column_settings.bottom_padding }}" data-padding-left="{{ column_settings.left_padding }}" data-padding-right="{{ column_settings.right_padding }}">
+        {% for content in fields.content %}
+            
+            {% if content.aspect_ratio == 'narrow-landscape' %}
+                {% set imageHeight = 680 %}
+            {% else %}
+                {% set imageHeight = 840 %}
+            {% endif %}
+
+            {% include 'components/flexible-content.twig' with {'content': content, 'imageWidth': imageWidth, 'imageHeight': imageHeight } %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

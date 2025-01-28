@@ -1,0 +1,18 @@
+{% set post = get_post(item.ID) %}
+{% set background = post.thumbnail %}
+{% set link = post.link %}
+{% set excerpt = post.meta('excerpt') %}
+
+<a class="card style-2 has-hover" href="{{ link }}">
+    <div class="card-thumbnail">
+        <img src="{{ background.src ? background.src : theme.link ~ '/images/placeholder.png'|resize(1000)|towebp }}" alt="{{ background.alt ? background.alt : background.title }}" />
+    </div>
+
+   <div class="card-content default">
+        <div class="card-content__header d-flex align-items-center justify-content-between">
+            <h6 class="card-title h6">{{ post.title }}</h6>
+        </div>
+
+    </div>
+
+</a>

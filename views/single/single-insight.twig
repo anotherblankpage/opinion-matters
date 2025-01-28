@@ -1,0 +1,81 @@
+{# Single Page #}
+
+{% extends 'base.twig' %}
+
+{% set nextPost = post.meta('next_project') ? getPost(post.meta('next_project')[0]) : getPost(post.next.id) %}
+{% set postTerms = post.terms('insight_category') %}
+{% block content %}
+    
+    <section class="content-block heading-block default">
+        <div class="content-block__inner d-flex mx-4 mx-lg-4 m-0">
+            <div class="content-block__background-image bottom cover" style="background-image: url({{ theme.link }}/images/censuswide_hero_image.png)">
+                <div class="content-block__background-overlay none"></div>
+            </div>
+            <div class="container--large w-100">
+                <div class="heading-block__wrapper d-flex align-items-center justify-content-center text-center">
+                    <div class="heading-block__content col-12 no-content">
+                        {% for cat in postTerms %}
+                            <div class="badge {{ cat.slug }} bg-tint status {{ cat.meta('color') }}-status bg-tint--{{ cat.meta('color') }} mb-5">{{ cat.name }}</div>
+                        {% endfor %}
+                        <ul class="block-link__eyebrow p-0 purple mb-5 d-flex align-items-center justify-content-center text-center">
+                            <li>{{ post.date }}</li>
+                            <li class="me-0">{{ post.meta('read_time') }} Min Read</li>
+                        </ul>
+                        <h1>{{ post.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="header-media" padding-bottom="120">
+        {# Image Content #}
+        <div class="content-block  mx-4 mx-lg-4  m-0">
+            <div class="row w-100">
+                {% include 'components/image.twig' with {'source': post.thumbnail, 'width': 1728, 'height': 960} %}
+            </div>
+        </div>
+    </section>
+
+    <article class="px-3 px-lg-0" data-padding-top="120" data-padding-bottom="120">
+        <div class="container">
+        {{ post.content }}
+        </div>
+
+    </article>
+
+    <div class="content-block related-posts" data-padding-top="90" data-padding-bottom="90" data-padding-left="78" data-padding-right="78">
+        <div class="content-block__inner">
+            <div class="container--large">
+                <div class="row">
+                    <div class="col-12 col-md-12 text-center">
+                        <h3>Next Insight</h3>
+                    </div>
+                    {% set postTerms = nextPost.terms('insight_category') %}
+                    <a class="block-link image mt-5" href="{{ nextPost.link }}">
+                        <div class="block-link__content">
+                            <div class="block-link__eyebrow purple">
+                                <ul>
+                                    {% for cat in postTerms %}
+                                    <li>{{ cat.name }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="block-link__title h6 m-0 text-none">
+                                {{ nextPost.title }}
+                            </div>
+                        </div>
+                        <div class="block-link__media">
+                            <img class="block-link__image" src="{{ nextPost.thumbnail.src }}" alt="{{ nextPost.thumbnail.alt ? nextPost.thumbnail.alt : nextPost.thumbnail.title }}" />
+                        </div>
+                    </a>
+                    <div class="mt-5 text-center">
+                        <a class="pill-btn text-dark bg-primary-500" href="/case-studies">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

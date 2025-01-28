@@ -1,0 +1,237 @@
+{
+    "key": "group_652760d8b2fb2",
+    "title": "[Block Component] Video",
+    "fields": [
+        {
+            "key": "field_652760f90b199",
+            "label": "Video URL",
+            "name": "video_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "You can use youtube, vimeo, direct video urls.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_65277302687ea",
+            "label": "Aspect Ratio",
+            "name": "aspect_ratio",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Custom refers to the site's default image aspect ratio",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "square": "1:1 (Square)",
+                "standard": "4:3 (Standard)",
+                "wide": "16:9 (Wide)",
+                "ultrawide": "21:9 (Ultrawide)",
+                "portrait": "9:16 (Portrait)",
+                "custom-thumbnail": "Custom"
+            },
+            "default_value": "wide",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_652761620b19a",
+            "label": "Video Style",
+            "name": "video_style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Add the video as an autoplay looping background video component or as a popup embed.\r\nNote: There are limitations on mobile devices for autoplay backgrounds and may break.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Background",
+                "popup": "Popup"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_652760d8bb940",
+            "label": "Show Controls",
+            "name": "show_controls",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Pause\/Play & Mute",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_652761620b19a",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_652f1893481af",
+            "label": "Popup Style",
+            "name": "popup_style",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Optional button to open video as a popup embed.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_652761620b19a",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "icon": "Icon",
+                "fullname": "Full Name"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65279cb3d2364",
+            "label": "Start at",
+            "name": "start_at",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Video starts playing at desired time in seconds",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_652761620b19a",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_652f18513665a",
+            "label": "End at",
+            "name": "end_at",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Video ends playing at desired time in seconds. 0 means it will play to the end.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_652761620b19a",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_652761be0b19b",
+            "label": "Video Thumbnail",
+            "name": "video_thumbnail",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Image thumbnail. If none provided, the first frame of the video will be used. <strong style=\"color: red;\">Non youtube\/vimeo links must use a thumbnail.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1698147238
+}
