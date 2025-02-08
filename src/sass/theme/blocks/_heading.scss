@@ -38,12 +38,12 @@
     }
     &__foreground-wrapper {
         position: absolute;
-        right: 0;
         bottom: 0;
-        display: flex;
+        right: 0;
         width: 33.33vw;
         max-width: 540px;
         max-height: 540px;
+        display: flex;
         align-items: end;
         img {
             width: 100%;

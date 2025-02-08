@@ -5,7 +5,7 @@
 {% set nextPost = post.meta('next_post') ? getPost(post.meta('next_post')[0]) : getPost(post.next.id) %}
 {% set postTerms = post.terms('case_study_category') %}
 {% set theContent = post.meta('content_section') %}
-{% set patternUrl = theme.link ~ '/images/censuswide_dots_pattern.png' %}
+{% set patternUrl = theme.link ~ '/images/opinionmatters_dots_pattern.png' %}
 {% set overlaySettings = [{overlay: {
     behind: true,
     position: 'bottom-left',
@@ -13,7 +13,7 @@
     image_style: 'default',
     image: {
         url: patternUrl,
-        alt: 'Censuswide Dot Pattern'
+        alt: 'opinionmatters Dot Pattern'
     }
 }}]
 %}
@@ -67,7 +67,7 @@
                                     <div class="component-wrapper">
                                         <div class="overlay-image__wrapper behind-image {{ overlay.pos }}" style="max-width: 333px">
                                             <div class="default">
-                                                <img decoding="async" src="{{ patternUrl }}" alt="Censuswide Background Pattern">
+                                                <img decoding="async" src="{{ patternUrl }}" alt="opinionmatters Background Pattern">
                                             </div>
                                         </div>
                                         <div class="overlay-image__wrapper {{ section.position }}" style="max-width: 240px">

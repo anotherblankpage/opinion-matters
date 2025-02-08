@@ -6,9 +6,8 @@
     {% endif %}
 
     <div class="card-img-wrapper">
-        {% set imgUrl = item.image['url'] ? item.image['url'] : theme.link ~ '/images/placeholder.png' %}
         <div class="card-img-overlay"></div>
-        <img class="card-img" src="{{ imgUrl|resize(1000)|towebp }}" alt="{{ item.image['alt'] ? item.image['title']}}" />
+        <img class="card-img" src="{{ item.image['url']|resize(1000)|towebp }}" alt="{{ item.image['alt'] ? item.image['title']}}" />
     </div>
   
     <div class="card-content">

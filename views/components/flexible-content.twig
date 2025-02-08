@@ -19,9 +19,9 @@
             {% include 'components/partials/image-overlay.twig' with {'source': content.overlay_images } %}
         {% endif %}
         <div class="offset__wrapper {{ content.grayscale ? 'grayscale' : ''}}" data-padding-top="{{ content.outer_padding.padding_top }}" data-padding-right="{{ content.outer_padding.padding_right }}" data-padding-bottom="{{ content.outer_padding.padding_bottom }}" data-padding-left="{{ content.outer_padding.padding_left }}">
-        
+            {% if not content.hide_placeholder and content.image %}
                 {% include 'components/image.twig' with {'source': content.image, 'width': width, 'height': height, 'caption': content.caption, 'imageAspectRatio': content.aspect_ratio, 'imageShape': content.aspect_ratio, 'key': flexContentKey, 'blockId': block.id } %}
-   
+            {% endif %}
         </div>
     {% elseif content.acf_fc_layout == 'accordion' %}
         {% include 'components/accordion.twig' with {'source': content, 'key': flexContentKey, 'blockId': block.id} %}

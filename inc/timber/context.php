@@ -18,12 +18,15 @@ function extend_context( $context ) {
 	// Global Settings
 	$context['global']                = get_fields('option');
 
+	$context['case-study-settings']                = get_fields('case-study-settings');
+
 	// Taxonomies
 	// $context['term']                  = new Timber\Term();
 	// $context['post_terms']            = Timber::get_terms('category');
 
 	// Menus
 	$context['primary_menu']          = Timber::get_menu( 'primary' );
+	$context['cta_menu']              = Timber::get_menu( 'cta-menu' );
 	$context['policy_menu']           = Timber::get_menu( 'policy-menu' );
 	$context['footer_menu']           = Timber::get_menu( 'footer-menu' );
 

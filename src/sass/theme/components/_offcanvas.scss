@@ -16,8 +16,8 @@
     &.show {
         transition: none; 
         .menu-link {
-            bottom: 0;
             opacity: 1;
+            bottom: 0;
         }
     }
     &__close {
@@ -35,13 +35,42 @@
     .nav-link {
         &__item {
             position: relative;
-            // height: 130px;height
+            // height: 130px;
             overflow: hidden;
             @include Transition;
             &:hover {
                 background-color: $primary-500;
                 color: $mono-900;
             }
+            // &:hover {
+            //     background-color: $primary-500;
+            //     .nav-link__text-wrapper {
+            //         top: -130px;
+            //         @include media-breakpoint-down(lg) {
+            //             top: -99px;
+            //         }
+            //         @include media-breakpoint-down(md) {
+            //             top: -86px;
+            //         }
+            //         @include media-breakpoint-down(md) {
+            //             top: -80px;
+            //         }
+            //     }
+            //     .default {
+                
+            //     }
+            //     .hovered {
+            //     }
+            // }
+            // @include media-breakpoint-down(lg) {
+            //     height: 99px;
+            // }
+            // @include media-breakpoint-down(md) {
+            //     height: 86px;
+            // }
+            // @include media-breakpoint-down(sm) {
+            //     height: 80px;
+            // }
         }
         &__text {
             padding: 24px 15%;
@@ -52,12 +81,12 @@
                 position: relative;
                 overflow: hidden;
                 &::after {
-                    position: absolute;
-                    top: 0;
-                    left: -50px;
-                    z-index: 0;
-                    width: calc(100% + 100px);
                     content: '';
+                    position: absolute;
+                    left: -50px;
+                    top: 0;
+                    width: calc(100% + 100px);
+                    z-index: 0;
                 }
             }
         }

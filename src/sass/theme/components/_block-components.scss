@@ -1,7 +1,7 @@
 .content-block {
-    position: relative;
     display: flex;
     justify-content: center;
+    position: relative;
     &__inner {
         width: 100%;
         &.background--light, &.background--primary {

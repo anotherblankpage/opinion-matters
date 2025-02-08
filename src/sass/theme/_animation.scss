@@ -1,4 +1,4 @@
-@mixin Transition($target: all, $duration: .35s, $easing: ease-in-out) {
+@mixin Transition($target: all, $duration: .15s, $easing: ease-in-out) {
     transition: $target $duration $easing;
 }
 .no-animation {
@@ -13,3 +13,4 @@
         opacity: 1;
     }
 }
+

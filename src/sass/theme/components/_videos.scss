@@ -1,5 +1,5 @@
 .video-wrapper {
-    padding-top: 56.25%; // 16:9 aspect ratio;
+    padding-top: 56.25%; // 16:9 aspect ratio
     position: relative;
     overflow: hidden;
     -webkit-user-select: none; /* Safari */
@@ -14,10 +14,10 @@
         height: 100%;
         .play-btn {
             position: absolute;
-            top: 50%;
-            right: 0;
             left: 0;
+            right: 0;
             margin: 0 auto;
+            top: 50%;
             transform: translateY(-50%);
         }
     }
@@ -38,36 +38,36 @@
         margin-top: 24px;
     }
     &.square {
-        padding-top: 100%; // 1:11
+        padding-top: 100%; // 1:1
     }
     &.standard {
-        padding-top: 75%; // 4:34
+        padding-top: 75%; // 4:3
     }
     &.wide {
-        padding-top: 56.25%; // 16:916
+        padding-top: 56.25%; // 16:9
     }
     &.ultrawide {
-        padding-top: 42.8571%; // 21:921
+        padding-top: 42.8571%; // 21:9
     }
     &.portrait {
-        padding-top: 177.77%; // 21:921
+        padding-top: 177.77%; // 21:9
     }
     &.custom-thumbnail {
         padding-top: 113%; // Theme default aspect ratio for images
     }
     .video-background-controls {
-        top: unset !important;
-        right: unset !important;
         bottom: 24px !important;
         left: 24px !important;
+        top: unset !important;
+        right: unset !important;
         > button {
             @include IconBtn;
-            width: 48px;
-            height: 48px;
-            font-size: .85rem;
             color: $mono-100;
             background-color: $mono-800;
+            width: 48px;
+            height: 48px;
             margin-right: 12px;
+            font-size: .85rem;
             @include Transition;
             &:hover {
                 background-color: $primary-900;
@@ -84,8 +84,8 @@
     }
     .video-background-popup {
         position: absolute;
-        right: 24px;
         bottom: 24px;
+        right: 24px;
     }
 }
 

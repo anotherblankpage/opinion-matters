@@ -11,7 +11,7 @@
 
 <div class="statistics-component d-flex flex-wrap justify-content-center">
 {% for stat in stats.statistic %}
-    <div class="statistics-component__item d-flex bg-white text-black {{ num_columns }} {{ stat.reverse_order ? 'flex-column-reverse' : 'flex-column' }}" data-padding-top="84" data-padding-bottom="84" data-padding-left="60" data-padding-right="60">
+    <div class="statistics-component__item d-flex bg-white {{ num_columns }} {{ stat.reverse_order ? 'flex-column-reverse' : 'flex-column' }}" data-padding-top="84" data-padding-bottom="84" data-padding-left="60" data-padding-right="60">
         <div class="statistic-component__stat h2 m-0">{{ stat.stat }}</div>
         <div class="statistic-component__meta">
             {% if stat.title %}<div class="statistic-component__title text-mono-600">{{ stat.title }}</div>{% endif %}

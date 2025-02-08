@@ -1,11 +1,9 @@
 // Logo changes between light and dark depending on the background it's over
 (function($) {
-    if($('.dynamic-nav').length) {
+    updateLogoColor();
+    $(window).on('scroll', function() {
         updateLogoColor();
-        $(window).on('scroll', function() {
-            updateLogoColor();
-        });
-    }
+    });
 
     function updateLogoColor() {
         let triggerLight = false;

@@ -31,56 +31,38 @@
 
 {# IMAGE STYLES #}
 {% if imageAspectRatio == 'pattern-1' %}
-<div class="img-shape-wrapper">
-    <svg width="100%" height="auto" viewBox="0 0 830 903" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M-10 -2C-10 -8.62742 -4.62738 -14 2 -14H555C561.627 -14 567 -8.62741 567 -2V197C567 203.627 572.373 209 579 209H706H818C824.627 209 830 214.373 830 221V770C830 776.627 824.627 782 818 782H730C723.373 782 718 787.373 718 794V891C718 897.627 712.627 903 706 903H287C280.373 903 275 897.627 275 891V718C275 711.373 269.627 706 263 706H2C-4.62744 706 -10 700.627 -10 694V-2Z" fill="url(#pattern-{{ uniqueKey }})"/>
-        <defs>
-            <pattern id="pattern-{{ uniqueKey }}" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image-{{ uniqueKey }}" transform="matrix(0.000445942 0 0 0.000408497 -0.227778 0)"/>
-            </pattern>
-            <image id="image-{{ uniqueKey }}" width="3264" height="2448" xlink:href="{{ imageLink|resize(1200,1200,'center', { 'upscale': false }) }}" />
-        </defs>
-    </svg>
-</div>
+    <div class="img-shape-wrapper">
+        <svg width="100%" viewBox="0 0 830 903" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M-10 -2C-10 -8.62742 -4.62738 -14 2 -14H555C561.627 -14 567 -8.62741 567 -2V197C567 203.627 572.373 209 579 209H706H818C824.627 209 830 214.373 830 221V770C830 776.627 824.627 782 818 782H730C723.373 782 718 787.373 718 794V891C718 897.627 712.627 903 706 903H287C280.373 903 275 897.627 275 891V718C275 711.373 269.627 706 263 706H2C-4.62744 706 -10 700.627 -10 694V-2Z" fill="url(#pattern-{{ uniqueKey }})"/>
+            <defs>
+                <pattern id="pattern-{{ uniqueKey }}" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#image-{{ uniqueKey }}" transform="matrix(0.000445942 0 0 0.000408497 -0.227778 0)"/>
+                </pattern>
+                <image class="img-shape-wrapper__image" id="image-{{ uniqueKey }}" width="3264" height="2448" href="{{ imageLink|resize(1200,1200,'center', { 'upscale': false }) }}" />
+            </defs>
+        </svg>
+        <img class="img-shape-wrapper__fallback hide" src="{{ imageLink|resize(1200,1200,'center', { 'upscale': false }) }}" />
+    </div>
 {% elseif imageAspectRatio == 'pattern-2' %}
-<div class="img-shape-wrapper flipped">
-    <svg width="100%" height="auto" viewBox="0 0 830 903" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M-10 -2C-10 -8.62742 -4.62738 -14 2 -14H555C561.627 -14 567 -8.62741 567 -2V197C567 203.627 572.373 209 579 209H706H818C824.627 209 830 214.373 830 221V770C830 776.627 824.627 782 818 782H730C723.373 782 718 787.373 718 794V891C718 897.627 712.627 903 706 903H287C280.373 903 275 897.627 275 891V718C275 711.373 269.627 706 263 706H2C-4.62744 706 -10 700.627 -10 694V-2Z" fill="url(#pattern-{{ uniqueKey }})"/>
-        <defs>
-            <pattern id="pattern-{{ uniqueKey }}" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image-{{ uniqueKey }}" transform="matrix(0.000445942 0 0 0.000408497 -0.227778 0)"/>
-            </pattern>
-            <image id="image-{{ uniqueKey }}" width="3264" height="2448" xlink:href="{{ imageLink|resize(1200,1200,'center', { 'upscale': false }) }}" />
-        </defs>
-    </svg>
-</div>
-
-
+    <div class="img-shape-wrapper flipped">
+        <svg width="100%" viewBox="0 0 830 903" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M-10 -2C-10 -8.62742 -4.62738 -14 2 -14H555C561.627 -14 567 -8.62741 567 -2V197C567 203.627 572.373 209 579 209H706H818C824.627 209 830 214.373 830 221V770C830 776.627 824.627 782 818 782H730C723.373 782 718 787.373 718 794V891C718 897.627 712.627 903 706 903H287C280.373 903 275 897.627 275 891V718C275 711.373 269.627 706 263 706H2C-4.62744 706 -10 700.627 -10 694V-2Z" fill="url(#pattern-{{ uniqueKey }})"/>
+            <defs>
+                <pattern id="pattern-{{ uniqueKey }}" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#image-{{ uniqueKey }}" transform="matrix(0.000445942 0 0 0.000408497 -0.227778 0)"/>
+                </pattern>
+                <image class="img-shape-wrapper__image" id="image-{{ uniqueKey }}" width="3264" height="2448" href="{{ imageLink|resize(1200,1200,'center', { 'upscale': false }) }}" />
+            </defs>
+        </svg>
+        <img class="img-shape-wrapper__fallback hide" src="{{ imageLink|resize(1200,1200,'center', { 'upscale': false }) }}" />
+    </div>
 {% else %}
     <picture class="img-wrapper {{ imageAspectRatio }}" data-width="{{ width }}" data-height="{{ height }}">
         {% if caption %}
-            <div class="img-wrapper__caption">{{ caption }}</div>
+            <div class="img-wrapper__caption badge status bg-tint dark text-white purple-status">{{ caption }}</div>
         {% endif %}
-        <!-- WebP Sources -->
-        <source srcset="{{ imageLink|resize(width,height)|towebp }} 1200w" type="image/webp" media="(min-width: 1200px)">
-        <source srcset="{{ imageLink|resize(768,NULL)|towebp }} 768w" type="image/webp" media="(min-width: 768px)">
-        <source srcset="{{ imageLink|resize(480,NULL)|towebp }} 480w" type="image/webp" media="(max-width: 767px)">
-        
-        <!-- Fallback JPEG/PNG Sources -->
-        <source srcset="{{ imageLink|resize(width, height) }} 1200w" media="(min-width: 1200px)">
-        <source srcset="{{ imageLink|resize(768, NULL) }} 768w" media="(min-width: 768px)">
-        <source srcset="{{ imageLink|resize(480, NULL) }} 480w" media="(max-width: 767px)">
-        
-        <!-- Default Image -->
-        <img 
-            src="{{ imageLink ? imageLink : theme.link ~ '/images/placeholder.png'|resize(NULL,height)}}" 
-            alt="{{ imageAlt }}" 
-            loading="lazy" 
-            decoding="async" 
-        >
+    <source media="(max-width:480px)" src="{{ imageLink|resize(NULL,mobileHeight)|towebp }}">
+    <source media="(max-width:768px)" src="{{ imageLink|resize(NULL,tabletHeight)|towebp }}">
+    <img src="{{ imageLink ? imageLink : theme.link ~ '/images/placeholder.png'|resize(NULL,height)|towebp }}" {{ disableLazy ? '' : 'loading="lazy"' }} alt="{{ imageAlt }}">
     </picture>
 {% endif %}
-
-
-
-

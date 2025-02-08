@@ -54,9 +54,7 @@
     left: -8px;
     bottom: -8px;
 }
-.editor-styles-wrapper {
-	background-color: #e2e2e2;
-}
+
 
 // ACF Styling
 @mixin ACFButton {
@@ -71,8 +69,11 @@
 .acf-tab-wrap {
 	overflow: hidden !important;
 }
-.acf-block-body {
+.acf-block-fields > {
 	box-shadow: 0 0 24px rgba(0,0,0,.15);
+	.editor-styles-wrapper {
+		background-color: #e2e2e2;
+	}
 	.acf-field-message:first-of-type {
 		background-color: #f9f9f9 !important;
 		& + .acf-field {
@@ -181,4 +182,8 @@
 			margin-left: -1px;
 		}
 	}
+}
+
+.mce-content-body a[data-mce-selected] {
+	background-color: #2ea3f2 !important;
 }

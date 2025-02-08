@@ -14,5 +14,17 @@
                 }
             });
         });
+
+
+        // Image shape wrapper fallback
+        $('.img-shape-wrapper').each(function() {
+            let imageEle = $(this).find('.img-shape-wrapper__image');
+            imagesLoaded(imageEle, {background: true})
+            .on('fail', function() {
+                $(this).closest('.img-shape-wrapper').find('.img-shape-wrapper__fallback').removeClass('hide');
+                console.info('SVG Image failed to load, using fallback');
+            });
+        });
+
     });
 })(jQuery);

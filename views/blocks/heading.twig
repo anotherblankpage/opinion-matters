@@ -70,10 +70,10 @@
     {% endif %} #}
     <div class="{{ block_name }}__content col-12  {{ fields.content ? '' : 'no-content' }}">
     
-        <div>{{ fields.custom_title == 'custom' ? fields.title : post.title }}</div>
+        <h1>{{ fields.custom_title == 'custom' ? fields.title : post.title }}</h1>
         {% if fields.content %}
             <div data-padding-top="180">
-                <p class="h4">{{ fields.content }}</p>
+                <p class="text-large">{{ fields.content }}</p>
             </div>
         {% endif %}
     </div>

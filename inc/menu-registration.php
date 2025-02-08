@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
 function register_my_menus() {
     register_nav_menus(array(        
         'policy-menu' => __( 'Policy Menu' ),
+        'cta-menu' => __( 'CTA Menu' ),
         'footer-menu' => __( 'Footer Menu' ),
     ));
 }

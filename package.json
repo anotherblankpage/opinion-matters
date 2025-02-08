@@ -1,10 +1,10 @@
 {
-  "name": "another-blank-boilerplate",
+  "name": "opinionmatters",
   "version": "1.2.0",
   "description": "Basic Child Theme for Understrap Theme Framework: https://github.com/understrap/understrap",
   "main": "index.js",
   "scripts": {
-    "lint:scss": "stylelint 'src/sass/theme/**/*.scss' --fix",
+    "bs": "browser-sync start --config src/build/browser-sync.config.js",
     "css": "npm-run-all css-compile css-postcss css-minify",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/sass/child-theme.scss:css/child-theme.css src/sass/custom-editor-style.scss:css/custom-editor-style.css",
     "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output css/ --batch --batch-suffix \".min\" \"css/*.css\" \"!css/*.min.css\" \"!css/*rtl*.css\"",
@@ -13,6 +13,7 @@
     "js-compile": "rollup --config src/build/rollup.config.js --sourcemap",
     "js-minify": "terser js/child-theme.min.js --config-file src/build/terser.config.json --source-map \"content=js/child-theme.js.map,url=child-theme.min.js.map,filename=child-theme.min.js\" --output js/child-theme.min.js",
     "watch": "npm-run-all --parallel watch-run-*",
+    "watch-bs": "npm-run-all --parallel bs watch-run-*",
     "watch-run-css": "nodemon --watch src/sass/ --ext scss --exec \"npm-run-all css\"",
     "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm-run-all js\"",
     "copy-assets": "node src/build/copy-assets.js",
@@ -25,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/understrap/another-blank-boilerplate.git"
+    "url": "https://github.com/understrap/opinionmatters.git"
   },
   "keywords": [
     "wordpress",
@@ -37,9 +38,13 @@
   "author": "The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/understrap/another-blank-boilerplate/issues"
+    "url": "https://github.com/understrap/opinionmatters/issues"
   },
   "homepage": "https://understrap.com",
+  "dependencies": {
+    "gsap": "^3.12.4",
+    "textify.js": "^3.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.22.20",
@@ -51,7 +56,7 @@
     "@rollup/plugin-replace": "^5.0.2",
     "autoprefixer": "^10.4.16",
     "bootstrap": "^5.3.2",
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^3.0.2",
     "browserslist": "^4.21.11",
     "caniuse-lite": "^1.0.30001539",
     "clean-css-cli": "^5.6.2",
@@ -63,9 +68,6 @@
     "postcss-understrap-palette-generator": "git+https://github.com/understrap/postcss-understrap-palette-generator.git",
     "rollup": "^3.29.3",
     "sass": "^1.68.0",
-    "stylelint": "^16.9.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.7.0",
     "terser": "^5.20.0",
     "understrap": "github:understrap/understrap#develop"
   }

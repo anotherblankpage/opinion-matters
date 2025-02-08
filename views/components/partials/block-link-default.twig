@@ -2,24 +2,31 @@
 
 {% for block_link in source.block_link %}
 
-   <a class="block-link {{ source.link_style }}" href="{{ block_link.link['url'] }}" target="new">
-      <div class="block-link__content">
-         <div class="block-link__eyebrow purple">
-            {{ block_link.eyebrow }}
+   {% if source.link %}
+      <a class="block-link {{ source.link_style }} {{ loop.index is even ? 'reversed' : '' }}" href="{{ block_link.link['url'] }}" target="new">
+   {% else %}
+      <div class="block-link {{ source.link_style }} {{ loop.index is even ? 'reversed' : '' }}">
+   {% endif %}
+         <div class="block-link__content">
+            <div class="h3 text-secondary-500"><em>{{ block_link.title }}</em></div>
+            <p class="text-large"><strong>{{ block_link.subtitle }}</strong></p>
+            <p class="text-mono-600">
+               {{ block_link.content }}
+            </p>
          </div>
-         <div class="block-link__title h6 m-0 text-none">
-            {{ block_link.title }}
-         </div>
-      </div>
-      <div class="block-link__media">
-         {% if source.link_style == "image" %}
-            <img class="block-link__image" src="{{ block_link.image['url'] }}" alt="{{ block_link.image['alt'] ? block_link.image['alt'] : block_link.image['title'] }}" />
-         {% else %}
-            {% if block_link.link %}
-               <span class="icon-btn round lg bg-mono-900 ms-md-4 text-white"><i class="fa-light fa-arrow-right-long"></i></span>
+         <div class="block-link__media {{ loop.index is even ? 'reversed' : '' }}">
+            {% if source.link_style == "image" %}
+               <img class="block-link__image" src="{{ block_link.image['url'] }}" alt="{{ block_link.image['alt'] ? block_link.image['alt'] : block_link.image['title'] }}" />
+            {% else %}
+               {% if block_link.link %}
+                  <span class="icon-btn round lg bg-mono-900 ms-md-4 text-white"><i class="fa-light fa-arrow-right-long"></i></span>
+               {% endif %}
             {% endif %}
-         {% endif %}
+         </div>
+   {% if source.link %}
+      </a>
+   {% else %}
       </div>
-   </a>
+   {% endif %}
 
 {% endfor %}

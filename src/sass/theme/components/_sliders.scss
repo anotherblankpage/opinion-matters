@@ -1,14 +1,34 @@
 .slick {
+    .card {
+        height: 100%;
+    }
     .slick-track {
         display: flex !important;
     }
     .slick-slide {
-        height: inherit !important;
         margin: 0 18px;
+        height: inherit !important;
     }
     &.visible {
         .slick-list {
             overflow: visible !important;
+        }
+    }
+    &__arrow-wrapper {
+        display: flex;
+        justify-content: end;
+        padding: 48px 48px 0 48px;
+        @include media-breakpoint-down(md) {
+            padding: 24px;
+            justify-content: start;
+        }
+    }
+    &__arrow {
+        background-color: $mono-100;
+        margin: 0 12px;
+        @include Transition;
+        &:hover {
+            background-color: $primary-700;
         }
     }
 }
@@ -17,4 +37,7 @@
         max-width: 150px;
         margin: 0 auto;
     }
+}
+.slick-item {
+    width: 100%;
 }

@@ -1,16 +1,10 @@
 {# Navbar #}
 
-<div id="navbar" class="navbar-wrapper fixed-top {{ post.meta('navbar_theme') ? 'lighten bg-mono-100' : 'darken bg-mono-900' }}" data-device="{{ is_mobile ? 'mobile' : 'desktop' }}">
+<div id="navbar" class="navbar-wrapper fixed-top bg-white {{ post.meta('navbar_theme') ? 'lighten' : 'darken' }}" data-device="{{ is_mobile ? 'mobile' : 'desktop' }}">
     <a class="skip-link sr-only sr-only-focusable" href="#content"></a>
     {# Change flex-row to flex-row reverse if you want to swap menu and brand #}
     <nav class="navbar d-flex flex-row flex-nowrap justify-content-between" role="navigation" aria-labelledby="main-nav-label">
-        {# Logo #}
-        <div class="d-flex justify-content-center align-items-center">
-            <a class="navbar-brand  {{ post.meta('navbar_theme') ? 'lighten' : 'lighten' }}" rel="home" href="{{ site.url }}" itemprop="url">
-                <img class="navbar-brand__logo dark" src="{{ global.logo['url'] }}" width="196px" height="18px" alt="{{ site.name }}" />
-                <img class="navbar-brand__logo light" src="{{ global.logo_white['url'] }}" width="196px" height="18px" alt="{{ site.name }}" />
-            </a>
-        </div>
+
         
         {# Navigation Hamburger #}
         <ul id="menu" class="menu__wrapper d-flex align-content-center justify-content-center m-0 p-0">
@@ -21,11 +15,17 @@
                 </li>
             {% endfor %}
             </div>
-     
         </ul>
 
+        {# Logo #}
+        <div class="d-flex justify-content-center align-items-center">
+            <a class="navbar-brand  {{ post.meta('navbar_theme') ? 'lighten' : 'lighten' }}" rel="home" href="{{ site.url }}" itemprop="url">
+                <img class="navbar-brand__logo dark" src="{{ global.logo['url'] }}" width="135px" height="43px" alt="{{ site.name }}" />
+                <img class="navbar-brand__logo light" src="{{ global.logo_white['url'] }}" width="135px" height="43px" alt="{{ site.name }}" />
+            </a>
+        </div>
+
         <div class="cta-menu d-flex">
-            {% include 'timezone-tracker.twig' %}
             {# Be sure to remove d-lg-none classes if you want the hamburger to always show #}
             <li class="nav-link d-lg-none"><button class="pill-btn outline no-icon hamburger-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">Menu</button>
             {% for item in cta_menu.items %}

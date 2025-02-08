@@ -1,16 +1,33 @@
 // custom colors
-$primary-100: #fff;
-$primary-200: #FAF8F0;
-$primary-300: #EEEEEE; 
-$primary-400: #7A7A7A;
-$primary-500: #555555;
-$primary-600: #3D3D3D;
-$primary-700: #333333; 
-$primary-800: #151515;
-$primary-900: #000;
+$primary-100: #F7FAFF;
+$primary-200: #EAF6FF;
+$primary-300: #BCE4FF;
+$primary-400: #26BDF9; 
+$primary-500: #2EA3F2;
+$primary-600: #1C87D0;
+$primary-700: #0D63A7 ; 
+$primary-800: #003F6A ; 
+$primary-900: #002E5E ;
 
-$secondary-100: #e7e7e7;
+// secondary colors
+$secondary-100: #9CB4FF;
+$secondary-300: #4E79FF; 
+$secondary-500: #1041DA;
+$secondary-700: #002BB1 ; 
+$secondary-900: #001760 ;
 
+// Shades
+$mono-100: #fff;
+$mono-200: #F0F0F0;
+$mono-300: #CCCCCC;
+$mono-400: #C6C5C5;
+$mono-500: #AEAEAE;
+$mono-600: #666666;
+$mono-700: #2A2A2A ;
+$mono-800: #111111;
+$mono-900: #000;
+
+// Bootstrap overrides
 $blue: #0D5BBA;
 $red: #D63637;
 $purple: #4e4bbe;
@@ -18,39 +35,28 @@ $violet: #37163f;
 $magenta: #720c25;
 $space-blue: #0B0F19;
 
-// Shades
-$mono-100: #fff;
-$mono-200: #FAF8F0;
-$mono-300: #EEEEEE;
-$mono-400: #7A7A7A;
-$mono-500: #555555;
-$mono-600: #3D3D3D;
-$mono-700: #333333;
-$mono-800: #151515;
-$mono-900: #000;
+// Contatiners
+$container: 1400px;
+$container-lg: 1680px;
+$container-sm: 980px;
 
-// Bootstrap overrides
-
-//Colors
-$primary: $primary-700;
-$secondary: $secondary-100;
+// Bootstrap Colors
+$primary: $primary-500;
 $info: $blue;
-
 
 // Breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 552px,
+  sm: 428px,
   md: 768px,
-  lg: 1025px,
-  xl: 1301px,
-  xxl: 1681px
+  lg: 1280px,
+  xl: 1680px,
+  xxl: 1960px,
 );
 
 // Gutters
 $grid-gutter-width: 1.8rem;
 
-// Mixins
 // Mixins
 @mixin Gradient {
   background: rgb(30,29,38);
@@ -60,7 +66,6 @@ $grid-gutter-width: 1.8rem;
   background: rgb(12,12,13);
   background: linear-gradient(0deg, rgba(12,12,13,1) 0%, rgba(9,9,12,1) 50%, rgba(8,11,16,1) 100%);
 }
-
 @mixin Shadow {
     box-shadow: 0px 6px 13px 0px rgba(184, 177, 177, 0.10), 0px 23px 23px 0px rgba(184, 177, 177, 0.09), 0px -23px 23px 0px rgba(184, 177, 177, 0.09), 0px 52px 31px 0px rgba(184, 177, 177, 0.05), 0px -52px 31px 0px rgba(184, 177, 177, 0.05), 0px 92px 37px 0px rgba(184, 177, 177, 0.01), 0px -92px 37px 0px rgba(184, 177, 177, 0.01);
 }

@@ -1,5 +1,5 @@
 // Add your custom JS here.
-import './components/dynamic-nav';
+// import './components/dynamic-nav';
 import './components/accordions';
 import './components/animation';
 import './components/buttons';

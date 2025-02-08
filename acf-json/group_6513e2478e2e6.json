@@ -44,10 +44,7 @@
             "choices": {
                 "default": "Default",
                 "landscape": "Landscape",
-                "narrow-landscape": "Narrow Landscape",
-                "pattern-1": "Pattern 1",
-                "pattern-2": "Pattern 2",
-                "pattern-3": "Pattern 3"
+                "narrow-landscape": "Narrow Landscape"
             },
             "default_value": "default",
             "return_format": "value",
@@ -439,5 +436,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725041275
+    "modified": 1738975142
 }

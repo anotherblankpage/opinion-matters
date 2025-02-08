@@ -1,149 +1,199 @@
-@mixin H1 {
+@mixin Display {
     font-family: 'neue-haas-grotesk-display';
-    font-size: 84px;
+    font-size: 104px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 96%;
-    letter-spacing: -1.68px;
-    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 96%; 
+    letter-spacing: -3.12px;
+    i,
+    em {
+        font-family: "Instrument Serif";
+        font-size: 108px;
+        letter-spacing: -2.16px;
+        @include media-breakpoint-down(lg) {
+            font-size: 72px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 58px;
+        }
+    }
     @include media-breakpoint-down(lg) {
-        font-size: 66px;
+        font-size: 70px;
     }
     @include media-breakpoint-down(md) {
-        font-size: 48px;
-    }
-    @include media-breakpoint-down(sm) {
-        font-size: 30px;
+        font-size: 54px;
     }
 }
 
-@mixin H2 {
+@mixin H1 {
     font-family: 'neue-haas-grotesk-display';
     font-size: 72px;
     font-style: normal;
-    font-weight: 300;
-    line-height: auto;
+    font-weight: 400;
+    line-height: 114%; /* 82.08px */
     letter-spacing: -1.44px;
-    text-transform: uppercase;
+    i,
+    em {
+        font-family: "Instrument Serif";
+        font-size: 84px;
+        letter-spacing: -2.52px;
+        @include media-breakpoint-down(lg) {
+            font-size: 60px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 42px;
+        }
+    }
     @include media-breakpoint-down(lg) {
         font-size: 54px;
     }
     @include media-breakpoint-down(md) {
         font-size: 42px;
     }
-    @include media-breakpoint-down(sm) {
-        font-size: 26px;
-    }
 }
 
-@mixin H3 {
+@mixin H2 {
     font-family: 'neue-haas-grotesk-display';
     font-size: 60px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 96%;
-    letter-spacing: -1.32px;
-    text-transform: uppercase;
-    @include media-breakpoint-down(lg) {
-        font-size: 48px;
+    font-weight: 450;
+    line-height: 114%;
+    letter-spacing: -1.8px;
+    i,
+    em {
+        font-family: "Instrument Serif";
+        font-weight: 400;
+        letter-spacing: -1.2px;
+        @include media-breakpoint-down(lg) {
+            font-size: 45px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 34px;
+        }
     }
-    @include media-breakpoint-down(md) {
-        font-size: 30px;
-    }
-    @include media-breakpoint-down(sm) {
-        font-size: 22px;
-    }
-}
-
-@mixin H4 {
-    font-family: 'neue-haas-grotesk-display';
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 96%;
-    letter-spacing: -0.48px;
-    text-transform: uppercase;
     @include media-breakpoint-down(lg) {
         font-size: 42px;
     }
     @include media-breakpoint-down(md) {
         font-size: 30px;
     }
-    @include media-breakpoint-down(sm) {
-        font-size: 18px;
+}
+
+@mixin H3 {
+    font-family: "Instrument Serif";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 114%;
+    letter-spacing: -0.48px;
+    i,
+    em {
+        font-family: "Instrument Serif";
+    }
+    @include media-breakpoint-down(lg) {
+        font-size: 36px;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 32px;
+    }
+}
+
+@mixin H4 {
+    font-family: 'neue-haas-grotesk-display';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 144%;
+    letter-spacing: -1.48px;
+    @include media-breakpoint-down(lg) {
+        font-size: 30px;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 26px;
     }
 }
 
 @mixin H5 {
     font-family: 'neue-haas-grotesk-display';
-    font-size: 36px;
+    font-size: 30px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 132%;
-    letter-spacing: -0.36px;
-    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 144%;
+    letter-spacing: -1.36px;
+    i,
+    em {
+        font-family: "Instrument Serif";
+        line-height: 114%; 
+        letter-spacing: -0.3px;
+        @include media-breakpoint-down(lg) {
+            font-size: 26px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+        }
+    }
     @include media-breakpoint-down(lg) {
-        font-size: 30px;
+        font-size: 28px;
     }
     @include media-breakpoint-down(sm) {
-        font-size: 18px;
+        font-size: 24px;
     }
 }
 
-@mixin H6 {
-    font-family: 'neue-haas-grotesk-display';
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 120%;
-    letter-spacing: -1%;
-    text-transform: uppercase;
-    @include media-breakpoint-down(sm) {
-        font-size: 16px;
-    }
-}
+
 
 @mixin BodyLarge {
     font-family: 'neue-haas-grotesk-display';
     font-size: 24px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 156%;
+    font-weight: 450;
+    line-height: 144%;
+    @include media-breakpoint-down(lg) {
+        font-size: 22px;
+    }
     @include media-breakpoint-down(md) {
-        font-size: 18px;
-        line-height: 144%;
+        font-size: 20px;
     }
 }
 
 @mixin BodyRegular {
     font-family: 'neue-haas-grotesk-display';
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 156%;
-    letter-spacing: 1px
-}
-
-@mixin BodyMedium {
-    font-family: 'neue-haas-grotesk-display';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: auto;
-    @include media-breakpoint-down(lg) {
-        font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 1px;
+    i,
+    em {
+        font-family: "Instrument Serif";
+        line-height: 114%; 
+        letter-spacing: -0.5px;
     }
     @include media-breakpoint-down(md) {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
+
+// @mixin BodyMedium {
+//     font-family: 'neue-haas-grotesk-display';
+//     font-size: 18px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: auto;
+//     @include media-breakpoint-down(lg) {
+//         font-size: 16px;
+//     }
+//     @include media-breakpoint-down(md) {
+//         font-size: 14px;
+//     }
+// }
 
 @mixin BodySmall {
     font-family: 'neue-haas-grotesk-display';
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 300;
-    line-height: 156%;
+    font-weight: 400;
+    line-height: 144%;
     @include media-breakpoint-down(lg) {
         font-size: 14px;
     }
@@ -155,17 +205,36 @@ h2 { @include H2; }
 h3 { @include H3; }
 h4 { @include H4; }
 h5 { @include H5; }
-h6 { @include H6; }
+
 
 .h1 { @include H1; }
 .h2 { @include H2; }
 .h3 { @include H3; }
 .h4 { @include H4; }
 .h5 { @include H5; }
-.h6 { @include H6; }
 
-i,em {
+i,em, .text-italic {
     font-style: italic;
+    font-family: "Instrument Serif";
+}
+.eyebrow {
+    display: flex;
+    align-items: center;
+    &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 16px;
+    }
+    &.text-secondary-500 {
+        &::before {
+            background-color: $secondary-500;
+        }
+    }
 }
 b, strong {
     font-weight: 700;
@@ -174,30 +243,32 @@ p {
     @include BodyRegular;
 }
 a {
-    color: $mono-100;
+    color: $primary-500;
     transition: all .3s ease;
     &:hover {
-        color: $primary-500;
+        color: $primary-900;
     }
 }
 #tinymce {
     a {
-        color: $mono-800;
+        color: $primary-500;
     }
 }
+
+.display { 
+    @include Display; 
+    color: $primary-900;
+    i,em {
+        color: $secondary-500;
+    }
+}
+
 // Custon Stylings
-.text-primary {
-    color: $primary-500;
-}
-.text-semi {
-    @include BodyRegular;
-}
-.text-large {
-    @include BodyLarge;
-}
-.text-small {
-    @include BodySmall;
-}
+.text-primary { color: $primary-500; }
+.text-semi { @include BodyRegular; }
+.text-large { @include BodyLarge; }
+.text-small { @include BodySmall; }
+
 p.text-indent {
     padding-left: 18%;
     @include media-breakpoint-down(md) {
@@ -209,7 +280,6 @@ p.text-indent {
 }
 
 a.link {
-    @include H6;
     display: inline-block;
     text-decoration: none;
     color: $primary-500;

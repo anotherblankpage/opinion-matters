@@ -2,18 +2,73 @@
     background-color: rgba(255,255,255,.25);
     backdrop-filter: blur(5px);
     color: $mono-100;
+    &.inverted {
+        background-color: rgba(0,0,0,.5);
+    }
 }
 
-.text-primary-100 { color: $primary-100; }
+@mixin PrimaryBG {
+    background-color: $primary-500;
+    color: $mono-900;
+    &:hover {
+        color: $mono-900 !important;
+        background-color: $primary-700 !important;
+    }
+}
 
-.bg-primary-600 { background-color: $primary-600; }
+
+.text-primary-100 { color: $primary-100; }
+.text-primary-700 { color: $primary-700; }
+.text-primary-900 { color: $primary-900; }
+
+.text-mono-300 { color: $mono-300; }
+.text-mono-400 { color: $mono-400; }
+.text-mono-500 { color: $mono-500; }
+.text-mono-600 { color: $mono-600; }
+.text-mono-900 { color: $mono-900; }
+
+.bg-primary-100 { background-color: $primary-100; }
+.bg-primary-300 { background-color: $primary-300; }
+.bg-primary-500 { background-color: $primary-500 !important; }
 .bg-primary-700 { background-color: $primary-700; }
-.bg-primary-800 { background-color: $primary-800; }
+.bg-primary-800 { background-color: $primary-900; }
 .bg-primary-900 { background-color: $primary-900; }
 
+.bg-mono-100 { background-color: $mono-100; }
 .bg-mono-800 { background-color: $mono-800; }
 .bg-mono-900 { background-color: $mono-900; }
 
+.bg-violet { background-color: $violet; }
+
+
+.bg-secondary-500 { background-color: $secondary-500 !important; }
+
+.text-secondary-500 { color: $secondary-500 !important; }
 .grayscale {
     filter: grayscale(1);
 }
+
+.bg-primary {
+    @include PrimaryBG;
+}
+.bg-tint {
+    &.dark {
+        background-color: rgba(0,0,0,.2);
+    }
+    &--purple { background-color: transparentize($purple,.75); }
+    &--violet { background-color: transparentize($violet,.75); }
+    &--magenta { background-color: transparentize($magenta,.75); }
+    &--green { background-color: transparentize($secondary-500,.75); }
+    &--teal { background-color: transparentize($primary-500,.75); }
+}
+
+.border-left-primary-500 { border-left: 1px solid $primary-500 !important; }
+
+.border-left-mono-300 { border-left: 1px solid $mono-300 !important; }
+.border-right-mono-300 { border-right: 1px solid $mono-300 !important; }
+.border-right-mono-400 { border-right: 1px solid $mono-400 !important; }
+.border-right-mono-500 { border-right: 1px solid $mono-500 !important; }
+.border-right-mono-800 {  border-right: 1px solid $mono-800; }
+
+.border-bottom-mono-800 {  border-bottom: 1px solid $mono-800; }
+.border-bottom-mono-200 {  border-bottom: 1px solid $mono-200; }

@@ -80,29 +80,19 @@
 
 
 {# Main Block Container - For padding, extra classes #}
-<section id="{{ fields.id|sanitize|default(block.id) }}" class="content-block {{ block_name }} {{ content_block_classes }} {{ block_visibility }}" >
+<section id="{{ fields.id|sanitize|default(block.id) }}" class="content-block {{ block_name }} {{ content_block_classes }} {{ container_mobile_margins }} {{ container_margins }} {{ block_visibility }}"  data-padding-top="{{ padding_top }}" data-padding-bottom="{{ padding_bottom }}">
   {# BLOCK STYLES #}
-
+  {% if fields.top_margin %}
   <style>
     #{{ fields.id|sanitize|default(block.id) }} {
-      margin-top: {{ fields.top_margin ? fields.top_margin : '0' }};
-      padding-top: {{ padding_top ~ 'px'}};
-      padding-bottom: {{ padding_bottom ~ 'px' }};
-      @media (max-width: 1025px) {
-        padding-top: {{ padding_top/1.5 ~ 'px'}};
-        padding-bottom: {{ padding_bottom/1.5 ~ 'px' }};
-      }
-      @media (max-width: 768px) {
-        padding-top: {{ padding_top/2 ~ 'px'}};
-        padding-bottom: {{ padding_bottom/2 ~ 'px' }};
-      }
+      margin-top: {{ fields.top_margin }};
     }
   </style>
-
+  {% endif %}
   
   
   {# Inner Block Container - For background colors, side margins #}
-  <div class="content-block__inner d-flex {{ container_mobile_margins }} {{ container_margins }} {{ background_color }} {{ content_inner_block_classes }}">
+  <div class="content-block__inner d-flex {{ background_color }} {{ content_inner_block_classes }}">
     {% if fields.background_image %}
       <div class="content-block__background-image {{ fields.parallax_background ? 'parallax-background' : ''}} {{ fields.background_image.background_position }} {{ fields.background_image.background_size }}" style="background-image: url({{ fields.background_image.image['url'] }})"><div class="content-block__background-overlay {{ fields.background_image.overlay }}"></div></div>
     {% endif %}

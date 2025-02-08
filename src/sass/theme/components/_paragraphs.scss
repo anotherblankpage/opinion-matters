@@ -3,3 +3,24 @@
         margin-bottom: 0;
     }
 }
+
+.fancy-list {
+    padding: 0;
+    margin: 0 0 45px 0;
+    li {
+        display: flex;
+        align-items: center;
+        padding: 24px 0;
+        border-bottom: 1px solid $mono-500;
+        &::before {
+            content: '';
+            display: block;
+            width: 9px;
+            height: 9px;
+            flex: 0 0 9px;
+            background-color: $purple;
+            margin-right: 18px;
+            border-radius: 3px;
+        }
+    }
+}

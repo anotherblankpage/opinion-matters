@@ -28,6 +28,22 @@ function my_mce_before_init_insert_formats( $init_array ) {
 					'selector' => '*',
 					'classes' => 'text-primary',
 				
+				),
+				array(  
+					'title' => 'Gray',
+					'selector' => '*',
+					'classes' => 'text-mono-600',
+				
+				)
+			)
+		),
+		array(  
+			'title' => 'Display',
+			'items' => array(
+				array(  
+					'title' => 'Display',
+					'selector' => '*',
+					'classes' => 'display'
 				)
 			)
 		),
@@ -58,11 +74,6 @@ function my_mce_before_init_insert_formats( $init_array ) {
 					'title' => 'H5',
 					'selector' => '*',
 					'classes' => 'h5'
-				),
-				array(  
-					'title' => 'H6',
-					'selector' => '*',
-					'classes' => 'h6'
 				)
 			)
 		),
@@ -73,11 +84,6 @@ function my_mce_before_init_insert_formats( $init_array ) {
 					'title' => 'Large',
 					'selector' => '*',
 					'classes' => 'text-large'
-				),
-				array(  
-					'title' => 'Semi',
-					'selector' => '*',
-					'classes' => 'text-semi'
 				),
 				array(  
 					'title' => 'Small',
@@ -95,24 +101,14 @@ function my_mce_before_init_insert_formats( $init_array ) {
 			'title' => 'Buttons',
 			'items' => array(
 				array(  
-					'title' => 'Link with Arrow',
-					'selector' => 'a',
-					'classes' => 'arrow-link'
-				),
-				array(  
 					'title' => 'Pill Button',
 					'selector' => 'a',
-					'classes' => 'pill-btn bg-primary-700'
+					'classes' => 'pill-btn text-white bg-primary-800 bg-hover-primary-500'
 				),
 				array(  
-					'title' => 'Pill Button White',
+					'title' => 'Pill Button Alt',
 					'selector' => 'a',
-					'classes' => 'pill-btn light shadow'
-				),
-				array(  
-					'title' => 'Peel Button',
-					'selector' => 'a',
-					'classes' => 'peel-btn'
+					'classes' => 'pill-btn text-white bg-secondary-500 bg-hover-primary-800'
 				),
 			)
 		),
@@ -123,6 +119,21 @@ function my_mce_before_init_insert_formats( $init_array ) {
 					'title' => 'Badge',
 					'block' => 'span',
 					'classes' => 'badge'
+				),
+				array(  
+					'title' => 'Eyebrow',
+					'block' => 'h5',
+					'classes' => 'h5 text-italic eyebrow text-secondary-500'
+				),
+				array(  
+					'title' => 'Fancy List',
+					'selector' => 'ul',
+					'classes' => 'fancy-list'
+				),
+				array(  
+					'title' => 'Divider',
+					'block' => 'hr',
+					'classes' => 'divider  purple'
 				)
 			)
 		)

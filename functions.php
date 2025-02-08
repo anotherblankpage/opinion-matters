@@ -1,6 +1,6 @@
 <?php
 /**
- * Child theme functions for Another Blank Boilerplate
+ * Child theme functions for opinionmatters
  *
  * 
  */

@@ -1,21 +1,20 @@
 .badge {
-    @include BodyMedium;
-    display: inline-block;
-    padding: 6px;
-    border: none;
     font-size: 12px;
-    font-weight: 400;
     line-height: 1.25em;
-    color: $mono-100;
-    box-shadow: none;
     text-transform: uppercase;
+    display: inline-block;
+    box-shadow: none;
     white-space: nowrap;
     text-decoration: none;
+    padding: 6px;
     justify-content: center;
     align-items: center;
+    font-weight: 400;
     gap: 6px;
     letter-spacing: 0.84px;
     border-radius: 6px;
+    color: $mono-100;
+    border: none;
     outline: none;
     .frosted-bg {
         @include FrostedBG;

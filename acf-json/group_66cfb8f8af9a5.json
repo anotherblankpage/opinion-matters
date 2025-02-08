@@ -115,32 +115,11 @@
             "layout": "table",
             "pagination": 0,
             "min": 0,
-            "max": 3,
+            "max": 0,
             "collapsed": "",
             "button_label": "Add Link",
             "rows_per_page": 20,
             "sub_fields": [
-                {
-                    "key": "field_66cfb9606624c",
-                    "label": "Eyebrow",
-                    "name": "eyebrow",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "Use unordered list",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "visual",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 0,
-                    "parent_repeater": "field_66cfb91f66248"
-                },
                 {
                     "key": "field_66cfb92e66249",
                     "label": "Title",
@@ -160,6 +139,50 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
+                    "parent_repeater": "field_66cfb91f66248"
+                },
+                {
+                    "key": "field_67a6ab9e0c987",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66cfb91f66248"
+                },
+                {
+                    "key": "field_67a6aba50c988",
+                    "label": "Content",
+                    "name": "content",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
                     "parent_repeater": "field_66cfb91f66248"
                 },
                 {
@@ -316,5 +339,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725038188
+    "modified": 1738976269
 }

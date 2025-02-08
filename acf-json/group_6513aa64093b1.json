@@ -229,6 +229,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67a6c4c5cc72e": {
+                    "key": "layout_67a6c4c5cc72e",
+                    "name": "image_collage",
+                    "label": "Image Collage",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67a6c4cacc731",
+                            "label": "Image Collage",
+                            "name": "image_collage",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67a6c3c69a216"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6513fd10ede75": {
                     "key": "layout_6513fd10ede75",
                     "name": "text",
@@ -469,6 +501,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67a6c489cc727": {
+                    "key": "layout_67a6c489cc727",
+                    "name": "image_collage",
+                    "label": "Image Collage",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67a6c48fcc72a",
+                            "label": "Image Collage",
+                            "name": "image_collage",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67a6c3c69a216"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6513fd10ede75": {
                     "key": "layout_6513fd10ede75",
                     "name": "text",
@@ -579,5 +643,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725504113
+    "modified": 1738983208
 }
