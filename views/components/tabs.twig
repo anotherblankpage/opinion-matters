@@ -6,10 +6,10 @@
 }
 </style>
 <div id="tabParent-{{ blockId }}-{{ key }}" class="tabs d-block d-lg-flex">
-   <ul class="tabs__menu p-0 px-lg-4">
+   <ul class="tabs__menu p-4">
       {% for item in tabs %}
          <li class="d-block tabs__menu-item">
-            <button class="tabs__toggle {{ loop.first ? '' : 'collapsed' }}" data-bs-toggle="collapse" data-bs-tabs data-bs-parent="#tabParent-{{ blockId }}-{{ key }}" data-bs-target="#tabBody-{{ blockId }}-{{ key }}-{{ loop.index }}"><span class="tabs__title">{{ item.title }}</span><span class="icon-btn ms-3 sm round outline text-tertiary-500 tab-inactive"><i class="fas fa-plus"></i></span><span class="icon-btn ms-3 round sm bg-tertiary-500 tab-active"><i class="fas fa-chevron-right"></i></span></button>
+            <button class="tabs__toggle {{ loop.first ? '' : 'collapsed' }}" data-bs-toggle="collapse" data-bs-tabs data-bs-parent="#tabParent-{{ blockId }}-{{ key }}" data-bs-target="#tabBody-{{ blockId }}-{{ key }}-{{ loop.index }}"><span class="tabs__title">{{ item.title }}</span><span class="icon-btn ms-3 sm round outline text-tertiary-500 tab-inactive"></button>
             <div class="d-block d-lg-none">
                <div id="tabBody-{{ blockId }}-{{ key }}-{{ loop.index }}" class="tabs__body accordion-collapse py-4 collapse {{ loop.first ? 'show' : ''}}">
                   {{ item.content }}

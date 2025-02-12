@@ -44,7 +44,8 @@
             "choices": {
                 "default": "Default",
                 "landscape": "Landscape",
-                "narrow-landscape": "Narrow Landscape"
+                "narrow-landscape": "Narrow Landscape",
+                "om-overlay": "OM Overlay"
             },
             "default_value": "default",
             "return_format": "value",
@@ -436,5 +437,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738975142
+    "modified": 1739348128
 }

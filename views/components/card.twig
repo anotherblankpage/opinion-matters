@@ -1,30 +1,14 @@
-<div class="card">
-    {% if item.collapsible_content|length > 0 %}
-        <div class="card-meta">
-            <a class="icon-btn frosted-bg collapsed" data-bs-toggle="collapse" href=".card-toggle-{{ key }}"><i class="fa-regular fa-info card-toggle-{{ key }} no-animation collapse show"></i><i class="fa-regular fa-close no-animation card-toggle-{{ key }} collapse"></i></a>
-        </div>
-    {% endif %}
-
-    <div class="card-img-wrapper">
-        <div class="card-img-overlay"></div>
-        <img class="card-img" src="{{ item.image['url']|resize(1000)|towebp }}" alt="{{ item.image['alt'] ? item.image['title']}}" />
-    </div>
-  
+<div class="card bg-primary-100">
     <div class="card-content">
         <div class="card-content__header">
-            <h2 class="card-title text-large text-none">{{ item.title }}</h2>
-        </div>
-        <div class="card-content__body text-mono-500">
-            {{ item.content }}
-            {% if item.collapsible_content|length > 0 %}
-                <div class="card-toggle-{{ key }} collapse">
-                    <div class="text-small">{{ item.collapsible_content }}</div>
-                </div>
-            {% endif %}
+            <h3 class="card-title text-none text-secondary-500 mb-3"><em>{{ item.title }}</em></h3>
+            <div class="card-content__body text-mono-600">
+                {{ item.content }}
+            </div>
         </div>
         {% if item.link %}
-            <div class="card-content__footer">
-                <a class="arrow-link" href="{{ item.link['url'] }}"><span class="card-toggle-{{ key }} no-animation collapse">{{ link_title ? link_title : item.link['title'] }}</span></a>
+            <div class="card-content__footer mt-3">
+                <a class="text-decoration-none"href="{{ item.link['url'] }}">{{ item.link['title'] }}<i class="fas fa-arrow-right ms-3"></i></a>
             </div>
         {% endif %}
     </div>

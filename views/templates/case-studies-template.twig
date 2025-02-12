@@ -2,40 +2,43 @@
 
 {% block content %}
 
-<header class="container--fluid mt-5 mt-md-0"  data-padding-top="238" data-padding-bottom="120">
-    <div class="container">
+<header class="container--fluid mt-5 mt-md-0 position-relative"  data-padding-top="238" data-padding-bottom="120">
+        {% if post.thumbnail %}
+            <div class="header-background-container {{ post.meta('background_position') }}" style="background-image: url('{{ post.thumbnail.src }}'); background-size: {{ post.meta('custom_background_size') ? post.meta('custom_background_size') : '' }};"></div>
+        {% endif %}
+    <div class="container--large px-3">
+
         <div class="row">
-            <div class="col-12 text-center">
-                <h1>{{ post.title }}</h1>
+            <div class="col-12">
+                <h2 class="text-secondary-500"><em>{{ post.meta('slogan') }}</em></h2>
+                <h1 class="display text-primary-900">{{ post.title }}</h1>
             </div>
         </div>
     </div>
 </header>
 
 <section>
-    <div class="container--large">
+    <div class="container--large px-3">
         <div class="row">
         {% for post in posts %}
-        <article class="col-12 col-md-6">
-            <div class="card style-2 has-hover mb-5">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+            <a class="card text-decoration-none" href="{{ post.link }}">
                 <div class="card-thumbnail">
                     <img src="{{ post.thumbnail.src ? post.thumbnail.src : theme.link ~ '/images/placeholder.png'|resize(1000)|towebp }}" alt="{{ background.alt ? post.thumbnail.alt : post.thumbnail.title }}" />
                 </div>
 
-                <div class="card-content default">
-                    <div class="card-content__header d-flex align-items-center justify-content-between">
-                        <div>
-                            <h6 class="card-title h6">{{ post.title }}</h6>
-                            {% if post.meta('excerpt') %}
-                                <p class="m-0 card-excerpt">{{ post.meta('excerpt')|truncate(12) }}</p>
-                            {% endif %}
-                        </div>
-                        <a href="{{ post.link }}" class="icon-btn round lg bg-mono-900 text-white me-3"><i class="fa-light fa-arrow-right-long"></i></a>
+                <div class="card-content overlay p-3 bg-primary-200">
+                    <div class="card-content__arrow">
+                        <i class="fa-sharp fa-solid fa-arrow-up-right"></i>
                     </div>
-
+                    <div class="card-content__header">
+                        <h6 class="card-title text-large">{{ post.title }}</h6>
+                        {% if post.meta('excerpt') %}
+                            <p class="m-0"><em>{{ post.meta('excerpt') }}</em></p>
+                        {% endif %}
+                    </div>
                 </div>
-
-            </div>
+            </a>
         </article>
         {% endfor %}
         </div>

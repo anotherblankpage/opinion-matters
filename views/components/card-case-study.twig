@@ -3,16 +3,21 @@
 {% set link = post.link %}
 {% set excerpt = post.meta('excerpt') %}
 
-<a class="card style-2 has-hover" href="{{ link }}">
+<a class="card text-decoration-none" href="{{ link }}">
     <div class="card-thumbnail">
         <img src="{{ background.src ? background.src : theme.link ~ '/images/placeholder.png'|resize(1000)|towebp }}" alt="{{ background.alt ? background.alt : background.title }}" />
     </div>
 
-   <div class="card-content default">
-        <div class="card-content__header d-flex align-items-center justify-content-between">
-            <h6 class="card-title h6">{{ post.title }}</h6>
+   <div class="card-content overlay p-3">
+        <div class="card-content__arrow">
+            <i class="fa-sharp fa-solid fa-arrow-up-right"></i>
         </div>
-
+        <div class="card-content__header">
+            <h6 class="card-title text-large">{{ post.title }}</h6>
+            {% if excerpt %}
+                <p class="m-0"><em>{{ excerpt }}</em></p>
+            {% endif %}
+        </div>
     </div>
 
 </a>

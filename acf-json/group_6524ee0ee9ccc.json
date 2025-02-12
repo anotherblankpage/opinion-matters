@@ -55,77 +55,75 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
-            "key": "field_6525f4e736aa1",
-            "label": "Card Type",
-            "name": "card_type",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "Default is open content while member, project, and company pull from their respective custom post type.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "default": "Default",
-                "member": "Member",
-                "project": "Project"
-            },
-            "default_value": "default",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_6525f5a052f35",
-            "label": "Number of Columns",
-            "name": "number_of_columns",
+            "key": "field_67ac651ee7918",
+            "label": "Card Style",
+            "name": "card_style",
             "aria-label": "",
             "type": "button_group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "2": "2",
-                "3": "3"
-            },
-            "default_value": 2,
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_6525f5df52f36",
-            "label": "Column Style",
-            "name": "column_style",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "Offset style with 3 columns only works best when there's 7 items.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "choices": {
                 "default": "Default",
-                "offset": "Offset"
+                "project": "Project"
             },
-            "default_value": "",
+            "default_value": "default",
             "return_format": "value",
             "allow_null": 0,
+            "allow_in_bindings": 0,
             "layout": "horizontal"
+        },
+        {
+            "key": "field_67ac6553d8c54",
+            "label": "Project Cards",
+            "name": "project_cards",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67ac651ee7918",
+                        "operator": "==",
+                        "value": "project"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "case-study"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": 4,
+            "allow_in_bindings": 0,
+            "elements": [
+                "featured_image"
+            ],
+            "bidirectional": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_6524ee2f15993",
@@ -138,7 +136,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_6525f4e736aa1",
+                        "field": "field_67ac651ee7918",
                         "operator": "==",
                         "value": "default"
                     }
@@ -193,13 +191,7 @@
                     "clone": [
                         "field_6525f15b6e911",
                         "field_6525f3756e918",
-                        "field_6525f1756e912",
-                        "field_6525f1ab6e915",
-                        "field_6525f1966e914",
-                        "field_6525f46bef0c7",
-                        "field_6525f18a6e913",
-                        "field_6525f2e76e916",
-                        "field_6525f881d8878"
+                        "field_6525f1ab6e915"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -208,121 +200,6 @@
                     "parent_repeater": "field_6524ee2f15993"
                 }
             ]
-        },
-        {
-            "key": "field_6525ff805b417",
-            "label": "Member Cards",
-            "name": "member_cards",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6525f4e736aa1",
-                        "operator": "==",
-                        "value": "member"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "member"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": [
-                "featured_image"
-            ],
-            "bidirectional": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_65418dd2dd203",
-            "label": "Video Type",
-            "name": "video_type",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6525f4e736aa1",
-                        "operator": "==",
-                        "value": "project"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "popup": "Popup",
-                "background": "Background"
-            },
-            "default_value": "",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_6525ffcf5b418",
-            "label": "Project Cards",
-            "name": "project_cards",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6525f4e736aa1",
-                        "operator": "==",
-                        "value": "project"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "project"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": [
-                "featured_image"
-            ],
-            "bidirectional": 0,
-            "bidirectional_target": []
         },
         {
             "key": "field_6524ee0ef3ec6",
@@ -365,5 +242,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702533939
+    "modified": 1739351466
 }

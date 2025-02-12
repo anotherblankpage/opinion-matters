@@ -1,0 +1,22 @@
+<div class="row img-collage {{ content.order }}">
+    <div class="offset-4 col-8 position-relative">
+        <div class="behind">
+            {% include 'components/image.twig' with {'source': content.image, 'width': 600, 'height': 600, 'imageAspectRatio': 'square'} %}
+        </div>
+        <div class="img-pattern bottom-left small">
+            {% include 'components/image.twig' with {'source': content.pattern_1, 'width': 180, 'height': 180 } %}
+        </div>
+    </div>
+    <div class="col-4">
+       {% include 'components/image.twig' with {'source': content.image_2, 'width': 272, 'height': 148 } %}
+    </div>
+    <div class="col-8">
+        
+    </div>
+    <div class="offset-4 col-4 position-relative">
+        {% include 'components/image.twig' with {'source': content.image_3, 'width': 300, 'height': 300, 'imageAspectRatio': 'square'} %}
+        <div class="img-pattern behind top-right">
+            {% include 'components/image.twig' with {'source': content.pattern_2, 'width': 341, 'height': 341 } %}
+        </div>
+    </div>
+</div>

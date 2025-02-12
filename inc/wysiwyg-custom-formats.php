@@ -26,7 +26,13 @@ function my_mce_before_init_insert_formats( $init_array ) {
 				array(  
 					'title' => 'Primary',
 					'selector' => '*',
-					'classes' => 'text-primary',
+					'classes' => 'text-primary-500',
+				
+				),
+				array(  
+					'title' => 'Secondary',
+					'selector' => '*',
+					'classes' => 'text-secondary-500',
 				
 				),
 				array(  

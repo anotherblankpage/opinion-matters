@@ -237,7 +237,7 @@ i,em, .text-italic {
     }
 }
 b, strong {
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 p {
     @include BodyRegular;

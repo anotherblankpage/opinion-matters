@@ -26,7 +26,6 @@
     &__arrow {
         background-color: $mono-100;
         margin: 0 12px;
-        @include Transition;
         &:hover {
             background-color: $primary-700;
         }

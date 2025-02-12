@@ -33,6 +33,9 @@
         &.contain {
             background-size: contain;
         }
+        &.custom {
+            background-size: 360px;
+        }
         &.bottom {
             background-position: bottom;
         }
@@ -41,6 +44,9 @@
         }
         &.bottom-right {
             background-position: bottom right;
+        }
+        &.top-right {
+            background-position: top right;
         }
     }
     &__background-overlay {

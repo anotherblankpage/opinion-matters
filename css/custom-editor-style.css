@@ -5524,6 +5524,10 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   background-color: #F7FAFF;
 }
 
+.bg-primary-200 {
+  background-color: #EAF6FF;
+}
+
 .bg-primary-300 {
   background-color: #BCE4FF;
 }
@@ -5546,6 +5550,10 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
 
 .bg-mono-100 {
   background-color: #fff;
+}
+
+.bg-mono-200 {
+  background-color: #F0F0F0;
 }
 
 .bg-mono-800 {
@@ -5972,7 +5980,7 @@ i, em, .text-italic {
 }
 
 b, strong {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 p {
@@ -6229,11 +6237,6 @@ p:empty {
     font-size: 18px;
   }
 }
-@media (max-width: 767.98px) {
-  .pill-btn, .mce-content-body a.pill-btn[data-mce-selected] {
-    line-height: 1;
-  }
-}
 .pill-btn::after, .mce-content-body a.pill-btn[data-mce-selected]::after {
   content: "\f178";
   font-family: "Font Awesome 6 Sharp";
@@ -6259,8 +6262,11 @@ p:empty {
   }
 }
 .pill-btn.light, .mce-content-body a.pill-btn[data-mce-selected].light {
-  background-color: #fff;
-  color: #111111;
+  background-color: #EAF6FF;
+  color: #000;
+}
+.pill-btn.light::after, .mce-content-body a.pill-btn[data-mce-selected].light::after {
+  color: #1041DA;
 }
 .pill-btn.dark, .mce-content-body a.pill-btn[data-mce-selected].dark {
   background-color: #0B0F19;
@@ -6308,6 +6314,7 @@ p:empty {
   outline: none;
   box-shadow: none;
   text-decoration: none;
+  border-radius: 50%;
   transition: all 0.15s ease-in-out;
 }
 .icon-btn i {
@@ -6324,13 +6331,6 @@ p:empty {
   width: 60px;
   height: 60px;
   flex: 0 0 60px;
-}
-@media (max-width: 767.98px) {
-  .icon-btn.lg {
-    width: 30px;
-    height: 30px;
-    flex: 0 0 30px;
-  }
 }
 .icon-btn.md {
   width: 50px;

@@ -1,6 +1,10 @@
 .abp-grid {
    display: grid;
    gap: 10%;
+   .grid-item:first-child {
+      position: relative;
+      z-index: -1;
+   }
    &.scale-75 { grid-template-columns: 7fr 5fr; }
    &.scale-84 { grid-template-columns: 2fr 1fr; }
    &.scale-66 { grid-template-columns: 1fr 1fr; }

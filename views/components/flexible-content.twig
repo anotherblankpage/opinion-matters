@@ -1,13 +1,13 @@
 {% set flexContentKey = loop.index %}
 
 {# Image Component Aspect Ratio #}
-{% set width = imageWidth ? imageWidth : 568 %}
+{% set width = imageWidth ? imageWidth : 742 %}
 
 {# Aspect ratio option for image component #}
 {% if content.aspect_ratio == 'landscape' %}
     {% set height = imageHeight ? imageHeight : 326 %}
 {% else %}
-    {% set height = imageHeight ? imageHeight : 768 %}
+    {% set height = imageHeight ? imageHeight : 742 %}
 {% endif %}
 
 
@@ -23,6 +23,8 @@
                 {% include 'components/image.twig' with {'source': content.image, 'width': width, 'height': height, 'caption': content.caption, 'imageAspectRatio': content.aspect_ratio, 'imageShape': content.aspect_ratio, 'key': flexContentKey, 'blockId': block.id } %}
             {% endif %}
         </div>
+    {% elseif content.acf_fc_layout == 'image_collage' %}
+        {% include 'components/image-collage.twig' with {'source': content } %}
     {% elseif content.acf_fc_layout == 'accordion' %}
         {% include 'components/accordion.twig' with {'source': content, 'key': flexContentKey, 'blockId': block.id} %}
     {% elseif content.acf_fc_layout == 'video' %}

@@ -122,11 +122,13 @@
                         "center": "Center",
                         "bottom": "Bottom",
                         "top": "Top",
-                        "bottom-right": "Bottom Right"
+                        "bottom-right": "Bottom Right",
+                        "top-right": "Top Right"
                     },
                     "default_value": "center",
                     "return_format": "value",
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "layout": "vertical"
                 },
                 {
@@ -1392,5 +1394,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725499991
+    "modified": 1739246919
 }

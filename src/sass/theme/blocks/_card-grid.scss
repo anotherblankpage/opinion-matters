@@ -1,10 +1,69 @@
 .card-grid {
+    .row {
+        height: 100%;
+    }
     .card {
         margin: calc($grid-gutter-width * 0.5) 0;
+        height: 100%;
         @include media-breakpoint-down(md) {
             margin: 7.5px 0;
         }
     }
+    .project {
+        .card {
+            height: auto;
+        }
+        .project-column:nth-child(1) {
+            .card { 
+                width: 60%;
+                @include media-breakpoint-down(lg) {
+                    width: 75%;
+                }
+             }
+            .card-thumbnail { padding-top: 150%; }
+        }
+        .project-column:nth-child(2) {
+            .card { margin-top: -33%; }
+            .card-thumbnail { padding-top: 110%; }
+            .card-content {
+                color: $mono-100;
+                background-color: $primary-400;
+            }   
+        }
+        .project-column:nth-child(3) {
+            .card { margin-top: 20%; width: 80%; margin-left: auto; }
+            .card-thumbnail { padding-top: 80%; }
+            .card-content {
+                color: $mono-100;
+                background-color: $primary-700;
+            }   
+        }
+        .project-column:nth-child(4) {
+            .card { 
+                width: 60%;
+                margin: 0 auto;
+                @include media-breakpoint-down(lg) {
+                    width: 75%;
+                }
+             }
+            .card-thumbnail { padding-top: 150%; }
+            .card-content {
+                color: $mono-100;
+                background-color: $primary-900;
+            }   
+        }
+        @include media-breakpoint-down(lg) {
+            .project-column {
+                .card {
+                    width: 100% !important;
+                    margin-top: 30px !important;
+                }
+                .card-thumbnail {
+                    padding-top: 80% !important;
+                }
+            }
+        }
+    } 
     .col-md-6 {
         @include media-breakpoint-down(sm) {
             .card {

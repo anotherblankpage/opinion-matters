@@ -8,6 +8,8 @@
    }
    &__menu {
       flex: 0 0 42%;
+      background-color: $mono-100;
+      border-radius: 12px;
    }
    &__title {
       @include Transition;
@@ -18,23 +20,37 @@
       align-items: center;
       width: 100%;
       background-color: transparent;
-      color: $mono-100;
-      text-transform: uppercase;
+      color: $secondary-500;
       padding: 24px 0;
       outline: none;
       border: none;
-      border-top: 1px solid white;
+      border-bottom: 2px solid $mono-200;
       text-align: left;
       justify-content: space-between;
       pointer-events: none;
+      position: relative;
       cursor: pointer;
+      &::before {
+         content: '';
+         width: 40px;
+         height: 2px;
+         background-color: $secondary-500;
+         position: absolute;
+         bottom: -2px;
+         left: 0;
+         opacity: 1;
+         z-index: 2;
+      }
       &:hover {
          .tabs__title {
-            color: $primary-500 !important;
+            color: $secondary-300 !important;
          }
       }
       &.collapsed {
          pointer-events: auto;
+         &::before {
+            opacity: 0;
+         }
          .tabs__title {
             color: $mono-600;
          }
@@ -45,9 +61,6 @@
             display: block;
          }
       }
-   }
-   &__menu-item:last-child button{
-      border-bottom: 1px solid white;
    }
    p>.badge {
       margin-bottom: 0;

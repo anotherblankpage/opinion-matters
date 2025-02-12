@@ -1,7 +1,8 @@
 .footer {
     background-repeat: no-repeat;
-    background-size: 1680px auto;
-    background-position: center;
+    background-size: 360px;
+    background-position: bottom right;
+    background-image: url('../images/om_pattern_1.png');
     &__background-video {
         pointer-events: none;
         position: absolute;
@@ -18,6 +19,13 @@
             object-fit: contain;
         }
     }
+    &__card {
+        min-height: 272px;
+        background-image: url('../images/om_icon.png');
+        background-size: 26px;
+        background-position: calc(100% - 30px) 30px;
+        background-repeat: no-repeat;
+    }
     &__brand {
         max-width: 300px;
         @include media-breakpoint-down(lg) {
@@ -25,21 +33,9 @@
             margin: 0 auto;
         }
     }
-    .footer-row {
-        margin: 120px 0;
-        @include media-breakpoint-down(lg) {
-            margin: 50px 0 0 0;
-            .pill-btn {
-                background-color: $primary-900;
-            }
-        }
-        @include media-breakpoint-down(md) {
-            margin: 0;
-        }
-    }
+    
     .policy-row {
-        margin-top: 100px;
-        border-top: 1px solid $mono-700;
+        margin-top: 50px;
         z-index: 1;
         position: relative;
         @include media-breakpoint-down(lg) {
