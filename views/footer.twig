@@ -1,9 +1,29 @@
+<section id="blockCallToAction" class="content-block single-column-content  mx-4 mx-lg-4 " data-padding-top="120" data-padding-bottom="120" style="padding-top: 6.66667%; padding-bottom: 6.66667%;">
+    <div class="content-block__inner d-flex  ">
+        <div class="content-block__background-image center cover">
+            <div class="content-block__background-overlay none"></div>
+        </div>
+        <div class="container--large w-100 aos-init aos-animate" data-aos="fade-up">
+            <div class="d-flex justify-content-lg-start">
+                <div class="col-12 col-lg-9 p-lg-0">
+                    <div class="column-wrapper background--none" data-padding-top="" data-padding-bottom="" data-padding-left="" data-padding-right="">
+                        <div class="component-wrapper">
+                            <div class="text-wrapper">
+                                {{ global.call_to_action }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer class="footer">
 
     <div class="container--large px-3">
         <div class="row flex-column flex-lg-row footer-row">
 
-            
             <div class="col mt-3 mt-lg-0">
                 <div class="card footer__card bg-primary-100 d-flex justify-content-end flex-column p-3">
                     <a class="d-block text-large text-decoration-none text-secondary-500" href="{{ global.google_maps }}" target="new">{{ global.full_address }}</a>
@@ -26,7 +46,7 @@
                     </div>
                     {% for item in global.social_media %}
                     <div class="">
-                        <a class="d-block text-large text-decoration-none mt-2 text-secondary-500" href="{{ item.url }}">{{ item.name }}</a>
+                        <a class="d-block text-large text-decoration-none mt-2 text-secondary-500" href="{{ item.url }}" target="new">{{ item.name }}</a>
                     </div>
                     {% endfor %}
                 </div>
@@ -36,7 +56,7 @@
     </div>
 
     <div class="policy-row">
-        <div class="container">
+        <div class="container--large px-3">
             <div class="row flex-column-reverse flex-lg-row py-3">
                 <div class="col-12 col-lg-6 text-center text-lg-start ">
                     <h6 class="text-small text-none text-mono-600 m-0">© {{ site.title }} All Rights Reserved {{ now|date('Y') }}<span class="text-primary d-inline-block mx-2">-</span>{{ global.copyright }}</h6>

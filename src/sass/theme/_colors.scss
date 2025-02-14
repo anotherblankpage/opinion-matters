@@ -35,6 +35,9 @@
 .bg-primary-800 { background-color: $primary-900; }
 .bg-primary-900 { background-color: $primary-900; }
 
+.bg-hover-primary-200:hover { background-color: $primary-200 !important; }
+.bg-hover-primary-400:hover { background-color: $primary-400 !important; }
+
 .bg-mono-100 { background-color: $mono-100; }
 .bg-mono-200 { background-color: $mono-200; }
 .bg-mono-800 { background-color: $mono-800; }
@@ -68,6 +71,9 @@
 
 .border-left-mono-300 { border-left: 1px solid $mono-300 !important; }
 .border-right-mono-300 { border-right: 1px solid $mono-300 !important; }
+.border-bottom-mono-300 { border-bottom: 1px solid $mono-300 !important; }
+.border-top-mono-300 { border-top: 1px solid $mono-300 !important; }
+
 .border-right-mono-400 { border-right: 1px solid $mono-400 !important; }
 .border-right-mono-500 { border-right: 1px solid $mono-500 !important; }
 .border-right-mono-800 {  border-right: 1px solid $mono-800; }

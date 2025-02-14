@@ -2,131 +2,121 @@
 
 {% extends 'base.twig' %}
 
-{% set nextPost = post.meta('next_post') ? getPost(post.meta('next_post')[0]) : getPost(post.next.id) %}
+{% set otherProjects = global.other_projects %}
 {% set postTerms = post.terms('case_study_category') %}
 {% set theContent = post.meta('content_section') %}
-{% set patternUrl = theme.link ~ '/images/opinionmatters_dots_pattern.png' %}
+{% set patternUrl = theme.link ~ '/images/om_pattern_5.png' %}
 {% set overlaySettings = [{overlay: {
-    behind: true,
-    position: 'bottom-left',
-    size: '333px',
+    behind: false,
+    position: 'top-left',
+    size: '222px',
     image_style: 'default',
     image: {
         url: patternUrl,
-        alt: 'opinionmatters Dot Pattern'
+        alt: 'opinionmatters arrow pattern'
+    }
+}}]
+%}
+{% set overlaySettings2 = [{overlay: {
+    behind: false,
+    position: 'bottom-right',
+    size: '222px',
+    image_style: 'default',
+    image: {
+        url: patternUrl,
+        alt: 'opinionmatters arrow pattern'
     }
 }}]
 %}
 {% block content %}
     
-    <header class="container--fluid">
+    <header class="template-header container--large">
         <div class="abp-grid scale-66 align-items-center">
             <div class="grid-item">
                 <div class="components-wrapper position-relative">
                     {% include 'components/partials/image-overlay.twig' with {'source': overlaySettings } %}
-                    <div class="offset__wrapper">
-                        {% include 'components/image.twig' with {'source': post.thumbnail, 'width': 1200, 'height': 1200, 'imageAspectRatio': 'pattern-1', 'imageShape': 'pattern-1', 'key': '1', 'blockId': post.ID } %}
+                    {% include 'components/partials/image-overlay.twig' with {'source': overlaySettings2 } %}
+                    <div class="offset__wrapper" data-padding="60">
+                        <div class="page-thumbnail position-relative">
+                            <div class="offset__logo">
+                                {% include 'components/image.twig' with {'source': post.meta('logo'), 'width': 285, 'height': 120 } %}
+                            </div>
+                            {% include 'components/image.twig' with {'source': post.thumbnail, 'width': 1200, 'height': 1200, 'imageAspectRatio': 'square'} %}
+                        </div>
                     </div>
+               
                 </div>
             </div>
             <div class="grid-item">
-                <div class="components-wrapper mx-5 mx-lg-0">
+                <div class="components-wrapper mt-5 mt-lg-0 mx-5 mx-lg-0">
                     {% for cat in postTerms %}
-                        <div class="badge {{ cat.slug }} bg-tint status {{ cat.meta('color') }}-status bg-tint--{{ cat.meta('color') }} mb-4 me-2">{{ cat.name }}</div>
+                        <h5 class="h5 text-italic eyebrow text-secondary-500 {{ cat.slug }}">{{ cat.name }}</h5>
                     {% endfor %}
-                    <h1>{{ post.title }}</h1>
+                    <h1 class="display">{{ post.title }}</h1>
                 </div>
             </div>
     </header>
 
-    <article class="px-3 px-lg-0" data-padding-top="120" data-padding-bottom="120">
-
-        {% for c in theContent %}
-            {% set section = c.section %}  
-            {% set altStyle = loop.index is odd %}    
-            {% if section.position == 'bottom-right' %}
-                {% set overlay = {pos: 'top-left', pt: 60, pe: 120, pb: 120, ps: 60} %}
-            {% elseif section.position == 'bottom-left' %}
-                {% set overlay = {pos: 'top-right', pt: 60, pe: 60, pb: 120, ps: 120} %}
-            {% elseif section.position == 'top-right' %}
-                {% set overlay = {pos: 'bottom-left', pt: 120, pe: 120, pb: 60, ps: 60} %}
-            {% else %}
-                {% set overlay = {pos: 'bottom-right', pt: 120, pe: 60, pb: 60, ps: 120} %}
-            {% endif %}
-            
-            <!-- SECTION -->
-            <section class="content-block two-column-content" data-padding-top="60" data-padding-bottom="60">
-                <div class="content-block__inner d-flex mx-4 mx-lg-4 {{ altStyle ? '' : 'background--light px-3 px-lg-0' }}">
-                    <div class="content-block__background-image center cover">
-                        <div class="content-block__background-overlay none"></div>
-                    </div>
-                    <div class="container w-100 {{ altStyle ? 'px-0 px-lg-2' : '' }}">
-                        <div class="abp-grid {{ altStyle ? 'abp-grid__reverse-row' : 'abp-grid__reverse-row-mobile' }} scale-66 align-items-center">
-                            <div class="grid-item">
-                                <div class="column-wrapper background--none" data-padding-top="{{ altStyle ? '' : 120 }}" data-padding-bottom="{{ altStyle ? '' : 120 }}">
-                                    <div class="component-wrapper">
-                                        <div class="overlay-image__wrapper behind-image {{ overlay.pos }}" style="max-width: 333px">
-                                            <div class="default">
-                                                <img decoding="async" src="{{ patternUrl }}" alt="opinionmatters Background Pattern">
+<section class="content-block single-column-content  mx-4 mx-lg-4 " data-padding-top="180" data-padding-bottom="180" >
+    <div class="content-block__inner d-flex background--light ">
+        <div class="content-block__background-image  top-right custom" style="background-image: url({{ theme.link ~ '/images/om_pattern_1.png' }});">
+            <div class="content-block__background-overlay none"></div>
+        </div>
+        <div class="container w-100 aos-init aos-animate" data-aos="fade-up">
+            <div class="d-flex justify-content-lg-center">
+                <div class="col-12 col-lg-12 p-lg-0">
+                    <div class="column-wrapper background--none" data-padding-top="120" data-padding-bottom="120" data-padding-left="" data-padding-right="" style="padding-top: 120px; padding-bottom: 120px;">
+                        <div class="component-wrapper">
+                            <div id="sectionTabs" class="tabs d-block d-lg-flex">
+                                <ul class="tabs__menu p-4">
+                                    {% for tab in theContent %}
+                                    <li class="d-block tabs__menu-item">
+                                        <button class="tabs__toggle {{ loop.first ? '' : 'collapsed' }}" data-bs-toggle="collapse" data-bs-tabs="" data-bs-parent="#sectionTabs" data-bs-target="#tabBody-{{ loop.index }}">
+                                            <span class="tabs__title">{{ tab.title }}</span>
+                                            <span class="icon-btn ms-3 sm round outline text-tertiary-500 tab-inactive"></span>
+                                        </button>
+                                        <div class="d-block d-lg-none">
+                                            <div id="tabBody-{{ loop.index }}" class="tabs__body accordion-collapse mt-3 collapse {{ loop.first ? 'show' : '' }}">
+                                                <h3><em class="text-secondary-500">{{ tab.title }}</em></h3>
+                                                <p class="m-0">&nbsp;</p>
+                                                <p class="text-mono-600">{{ tab.content }}</p>
                                             </div>
                                         </div>
-                                        <div class="overlay-image__wrapper {{ section.position }}" style="max-width: 240px">
-                                            <div class="thumbnail">
-                                                <img decoding="async" src="{{ section.secondary_image['url'] }}" alt="{{ section.secondary_image['alt'] }}">
-                                            </div>
-                                        </div>
-                                        <div class="offset__wrapper" data-padding-top="{{ overlay.pt }}" data-padding-right="{{ overlay.pe }}" data-padding-bottom="{{ overlay.pb }}" data-padding-left="{{ overlay.ps }}">
-                                            {% include 'components/image.twig' with {'source': section.image, 'width': 568, 'height': 768, 'imageAspectRatio': 'default', 'imageShape': 'default', 'key': '1', 'blockId': post.ID } %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-item">
-                                <div class="column-wrapper background--none" data-padding-top="{{ altStyle ? '' : 120 }}" data-padding-bottom="{{ altStyle ? '' : 120 }}">
-                                    <div class="component-wrapper my-4 my-lg-0">
-                                        <div class="text-wrapper">
-                                            <h2 class="h2 mb-3 mb-lg-5">{{ section.title }}</h2>
-                                            {{ section.content}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- Section end -->
-        {% endfor %}
-    </article>
-
-    <div class="content-block related-posts" data-padding-bottom="90">
-        <div class="content-block__inner">
-            <div class="container--large">
-                <div class="row">
-                    <div class="col-12 col-md-12 text-center">
-                        <h3>Next Case Study</h3>
-                    </div>
-                    {% set postTerms = nextPost.terms('case_study_category') %}
-                    <a class="block-link image mt-5" href="{{ nextPost.link }}">
-                        <div class="block-link__content">
-                            <div class="block-link__eyebrow purple">
-                                <ul>
-                                    {% for cat in postTerms %}
-                                    <li>{{ cat.name }}</li>
+                                    </li>
                                     {% endfor %}
                                 </ul>
-                            </div>
-                            <div class="block-link__title h6 m-0 text-none">
-                                {{ nextPost.title }}
+                                <div class="tabs__container d-none d-lg-block">
+                                    {% for tab in theContent %}
+                                    <div id="tabBody-{{ loop.index }}" class="tabs__body accordion-collapse collapse {{ loop.first ? 'show' : '' }}">
+                                        <h3><em class="text-secondary-500">{{ tab.title }}</em></h3>
+                                        <p class="m-0">&nbsp;</p>
+                                        <p class="text-mono-600">{{ tab.content }}</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
-                        <div class="block-link__media">
-                            <img class="block-link__image" src="{{ nextPost.thumbnail.src }}" alt="{{ nextPost.thumbnail.alt ? nextPost.thumbnail.alt : nextPost.thumbnail.title }}" />
-                        </div>
-                    </a>
-                    <div class="mt-5 text-center">
-                        <a class="pill-btn text-dark bg-primary-500" href="/case-studies">View All</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="d-flex text-center w-100 m-3 justify-content-center">
+        <center><h5 class="h5 text-italic eyebrow text-secondary-500 b2b-corporate">Other Projects</h5></center>
+    </div>
+    <div class="content-block related-posts" data-padding-bottom="90">
+       
+        <div class="container--fluid w-100 aos-init aos-animate">
+            <div id="{{ block.id }}-slick-slider"  class="slick case-study-slider" data-num-slides="3" data-arrows="true" data-autoplayspeed="10000">
+                {% for item in otherProjects %}
+                <div>
+                    <div data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        {% include 'components/card-case-study.twig' with {'item': item } %}
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

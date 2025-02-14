@@ -5548,6 +5548,14 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   background-color: #002E5E;
 }
 
+.bg-hover-primary-200:hover {
+  background-color: #EAF6FF !important;
+}
+
+.bg-hover-primary-400:hover {
+  background-color: #26BDF9 !important;
+}
+
 .bg-mono-100 {
   background-color: #fff;
 }
@@ -5618,6 +5626,14 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
 
 .border-right-mono-300 {
   border-right: 1px solid #CCCCCC !important;
+}
+
+.border-bottom-mono-300 {
+  border-bottom: 1px solid #CCCCCC !important;
+}
+
+.border-top-mono-300 {
+  border-top: 1px solid #CCCCCC !important;
 }
 
 .border-right-mono-400 {
@@ -5726,7 +5742,6 @@ h3, .h3 {
   font-style: normal;
   font-weight: 400;
   line-height: 114%;
-  letter-spacing: -0.48px;
 }
 h3 i, .h3 i,
 h3 em,
@@ -5750,7 +5765,6 @@ h4, .h4 {
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.48px;
 }
 @media (max-width: 1279.98px) {
   h4, .h4 {
@@ -5769,14 +5783,12 @@ h5, .h5 {
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.36px;
 }
 h5 i, .h5 i,
 h5 em,
 .h5 em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.3px;
 }
 @media (max-width: 1279.98px) {
   h5 i, .h5 i,
@@ -5883,7 +5895,6 @@ h5 em,
   font-style: normal;
   font-weight: 400;
   line-height: 114%;
-  letter-spacing: -0.48px;
 }
 .h3 i,
 .h3 em {
@@ -5906,7 +5917,6 @@ h5 em,
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.48px;
 }
 @media (max-width: 1279.98px) {
   .h4 {
@@ -5925,13 +5935,11 @@ h5 em,
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.36px;
 }
 .h5 i,
 .h5 em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.3px;
 }
 @media (max-width: 1279.98px) {
   .h5 i,
@@ -5995,7 +6003,6 @@ p i,
 p em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   p {
@@ -6072,7 +6079,6 @@ a:hover {
 .text-semi em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .text-semi {
@@ -6172,7 +6178,6 @@ p:empty {
 .mce-content-body .arrow-link[data-mce-selected] em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .arrow-link, .mce-content-body .arrow-link[data-mce-selected] {
@@ -6216,8 +6221,9 @@ p:empty {
   box-shadow: none;
   white-space: nowrap;
   text-decoration: none;
-  padding: 20px 32px 20px 32px;
+  padding: 20px 24px 16px 32px;
   justify-content: center;
+  line-height: 0;
   align-items: center;
   gap: 6px;
   border-radius: 100px;
@@ -6230,7 +6236,6 @@ p:empty {
 .mce-content-body a.pill-btn[data-mce-selected] em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .pill-btn, .mce-content-body a.pill-btn[data-mce-selected] {

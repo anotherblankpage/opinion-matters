@@ -233,6 +233,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67ae48676e295": {
+                    "key": "layout_67ae48676e295",
+                    "name": "image_collage",
+                    "label": "Image Collage",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67ae486e6e298",
+                            "label": "Image Collage",
+                            "name": "image_collage",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67a6c3c69a216"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_65362d273759c": {
                     "key": "layout_65362d273759c",
                     "name": "logos",
@@ -439,5 +471,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725561636
+    "modified": 1739475073
 }

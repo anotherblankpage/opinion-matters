@@ -1,15 +1,11 @@
 .page-template {
-    header {
-        padding-top: 110px;
-        background-image: url('../images/opinionmatters_hero_image.png');
-        background-size: 100% auto;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-    }
+   
 }
+
+
 .logged-in {
-    &.page-template header {
-        padding-top: 145px;
+    &.page-template header, &.single {
+        padding-top: 122px;
     }
 }
 .header-background-container {
@@ -58,6 +54,24 @@
             @include media-breakpoint-down(lg) {
                 padding-left: 0;
             }
+        }
+    }
+}
+
+.single-case-study {
+    background-image: url('../images/om_pattern_4.png');
+    background-size: 618px;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    @include media-breakpoint-down(lg) {
+        .page-thumbnail .img-wrapper.square {
+            padding-top: 56.25% !important;
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .page-thumbnail .img-wrapper.square {
+            padding-top: 56.25% !important;
         }
     }
 }

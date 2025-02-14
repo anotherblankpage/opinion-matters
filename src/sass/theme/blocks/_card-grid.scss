@@ -15,24 +15,24 @@
         }
         .project-column:nth-child(1) {
             .card { 
-                width: 60%;
+                width: 65%;
                 @include media-breakpoint-down(lg) {
                     width: 75%;
                 }
              }
-            .card-thumbnail { padding-top: 150%; }
+            .card-thumbnail { padding-top: 120%; }
         }
         .project-column:nth-child(2) {
-            .card { margin-top: -33%; }
-            .card-thumbnail { padding-top: 110%; }
+            .card { margin: -33% 10% 0 0; }
+            .card-thumbnail { padding-top: 85%; }
             .card-content {
                 color: $mono-100;
                 background-color: $primary-400;
             }   
         }
         .project-column:nth-child(3) {
-            .card { margin-top: 20%; width: 80%; margin-left: auto; }
-            .card-thumbnail { padding-top: 80%; }
+            .card { margin-top: 11%; width: 70%; margin-left: auto; }
+            .card-thumbnail { padding-top: 65%; }
             .card-content {
                 color: $mono-100;
                 background-color: $primary-700;
@@ -41,7 +41,7 @@
         .project-column:nth-child(4) {
             .card { 
                 width: 60%;
-                margin: 0 auto;
+                margin: -26% auto 0 auto;
                 @include media-breakpoint-down(lg) {
                     width: 75%;
                 }
@@ -57,6 +57,7 @@
                 .card {
                     width: 100% !important;
                     margin-top: 30px !important;
+                    margin-left: 0 !important;
                 }
                 .card-thumbnail {
                     padding-top: 80% !important;

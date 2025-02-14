@@ -134,11 +134,11 @@ a.card:hover .card-content {
     background-color: $primary-200;
     &.overlay {
         position: absolute;
-        bottom: 30px;
-        right: 30px;
+        bottom: 12px;
+        right: 12px;
+        width: calc(100% - 24px);
         max-width: 330px;
-        width: calc(100% - 30px);
-        border-radius: 12px;
+        border-radius: 6px;
         height: auto;
         padding-top: 60px !important;
         color: $primary-700;

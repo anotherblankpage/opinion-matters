@@ -11542,7 +11542,6 @@ h3, .h3 {
   font-style: normal;
   font-weight: 400;
   line-height: 114%;
-  letter-spacing: -0.48px;
 }
 h3 i, .h3 i,
 h3 em,
@@ -11566,7 +11565,6 @@ h4, .h4 {
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.48px;
 }
 @media (max-width: 1279.98px) {
   h4, .h4 {
@@ -11585,14 +11583,12 @@ h5, .h5 {
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.36px;
 }
 h5 i, .h5 i,
 h5 em,
 .h5 em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.3px;
 }
 @media (max-width: 1279.98px) {
   h5 i, .h5 i,
@@ -11699,7 +11695,6 @@ h5 em,
   font-style: normal;
   font-weight: 400;
   line-height: 114%;
-  letter-spacing: -0.48px;
 }
 .h3 i,
 .h3 em {
@@ -11722,7 +11717,6 @@ h5 em,
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.48px;
 }
 @media (max-width: 1279.98px) {
   .h4 {
@@ -11741,13 +11735,11 @@ h5 em,
   font-style: normal;
   font-weight: 400;
   line-height: 144%;
-  letter-spacing: -1.36px;
 }
 .h5 i,
 .h5 em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.3px;
 }
 @media (max-width: 1279.98px) {
   .h5 i,
@@ -11811,7 +11803,6 @@ p i,
 p em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   p {
@@ -11888,7 +11879,6 @@ a:hover {
 .text-semi em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .text-semi {
@@ -12030,6 +12020,14 @@ p:empty {
   background-color: #002E5E;
 }
 
+.bg-hover-primary-200:hover {
+  background-color: #EAF6FF !important;
+}
+
+.bg-hover-primary-400:hover {
+  background-color: #26BDF9 !important;
+}
+
 .bg-mono-100 {
   background-color: #fff;
 }
@@ -12100,6 +12098,14 @@ p:empty {
 
 .border-right-mono-300 {
   border-right: 1px solid #CCCCCC !important;
+}
+
+.border-bottom-mono-300 {
+  border-bottom: 1px solid #CCCCCC !important;
+}
+
+.border-top-mono-300 {
+  border-top: 1px solid #CCCCCC !important;
 }
 
 .border-right-mono-400 {
@@ -12262,7 +12268,6 @@ p:empty {
 .accordion .accordion-button em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .accordion .accordion-button {
@@ -12625,7 +12630,6 @@ p > .badge {
 .mce-content-body .arrow-link[data-mce-selected] em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .arrow-link, .mce-content-body .arrow-link[data-mce-selected] {
@@ -12669,8 +12673,9 @@ p > .badge {
   box-shadow: none;
   white-space: nowrap;
   text-decoration: none;
-  padding: 20px 32px 20px 32px;
+  padding: 20px 24px 16px 32px;
   justify-content: center;
+  line-height: 0;
   align-items: center;
   gap: 6px;
   border-radius: 100px;
@@ -12683,7 +12688,6 @@ p > .badge {
 .mce-content-body a.pill-btn[data-mce-selected] em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .pill-btn, .mce-content-body a.pill-btn[data-mce-selected] {
@@ -12980,11 +12984,11 @@ a.card:hover .card-content {
 }
 .card-content.overlay {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 12px;
+  right: 12px;
+  width: calc(100% - 24px);
   max-width: 330px;
-  width: calc(100% - 30px);
-  border-radius: 12px;
+  border-radius: 6px;
   height: auto;
   padding-top: 60px !important;
   color: #0D63A7;
@@ -13193,7 +13197,6 @@ select em, textarea i,
 textarea em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   input, select, textarea {
@@ -13373,6 +13376,29 @@ img {
 .offset__wrapper {
   position: relative;
   z-index: 1;
+}
+.offset__logo {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: #fff;
+  padding: 20px;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  max-width: 285px;
+  height: 120px;
+  border-radius: 6px;
+}
+.offset__logo .img-wrapper {
+  height: 100% !important;
+  padding-top: 0 !important;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.offset__logo .img-wrapper img {
+  -o-object-fit: contain !important;
+  object-fit: contain !important;
 }
 
 .overlay-image__wrapper {
@@ -13574,7 +13600,6 @@ img {
 .tabs__toggle em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   .tabs__toggle {
@@ -13973,7 +13998,6 @@ html i,
 html em {
   font-family: "Instrument Serif";
   line-height: 114%;
-  letter-spacing: -0.5px;
 }
 @media (max-width: 767.98px) {
   html {
@@ -14208,11 +14232,11 @@ article img {
 }
 .navbar .nav-link {
   display: inline-block;
-  margin-left: 24px;
+  margin-left: 12px;
 }
 @media (max-width: 767.98px) {
   .navbar .nav-link {
-    margin-left: 12px;
+    margin-left: 10px;
   }
 }
 .navbar .nav-link:first-child {
@@ -14231,6 +14255,13 @@ article img {
 }
 .navbar .pill-btn {
   padding: 12px 20px;
+  line-height: 1;
+}
+.navbar .pill-btn i {
+  font-family: "Font Awesome 6 Pro";
+  font-size: 0.7rem;
+  position: relative;
+  top: -2px;
 }
 .navbar.flex-row-reverse .nav-link {
   margin-right: 24px;
@@ -14244,6 +14275,16 @@ article img {
 }
 .navbar a {
   text-decoration: none;
+}
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.navbar .dropdown-toggle::after {
+  margin-left: 0.5em;
+}
+.navbar .dropdown-menu {
+  border: none;
+  background-color: transparent;
 }
 
 .logged-in .fixed-top {
@@ -14380,16 +14421,8 @@ article img {
   border-right: none;
 }
 
-.page-template header {
-  padding-top: 110px;
-  background-image: url("../images/opinionmatters_hero_image.png");
-  background-size: 100% auto;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-}
-
-.logged-in.page-template header {
-  padding-top: 145px;
+.logged-in.page-template header, .logged-in.single {
+  padding-top: 122px;
 }
 
 .header-background-container {
@@ -14463,6 +14496,23 @@ article img {
   }
 }
 
+.single-case-study {
+  background-image: url("../images/om_pattern_4.png");
+  background-size: 618px;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1279.98px) {
+  .single-case-study .page-thumbnail .img-wrapper.square {
+    padding-top: 56.25% !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .single-case-study .page-thumbnail .img-wrapper.square {
+    padding-top: 56.25% !important;
+  }
+}
+
 .two-column-content .background--light {
   margin: 0 -1.8rem;
 }
@@ -14488,7 +14538,7 @@ article img {
   height: auto;
 }
 .card-grid .project .project-column:nth-child(1) .card {
-  width: 60%;
+  width: 65%;
 }
 @media (max-width: 1279.98px) {
   .card-grid .project .project-column:nth-child(1) .card {
@@ -14496,25 +14546,25 @@ article img {
   }
 }
 .card-grid .project .project-column:nth-child(1) .card-thumbnail {
-  padding-top: 150%;
+  padding-top: 120%;
 }
 .card-grid .project .project-column:nth-child(2) .card {
-  margin-top: -33%;
+  margin: -33% 10% 0 0;
 }
 .card-grid .project .project-column:nth-child(2) .card-thumbnail {
-  padding-top: 110%;
+  padding-top: 85%;
 }
 .card-grid .project .project-column:nth-child(2) .card-content {
   color: #fff;
   background-color: #26BDF9;
 }
 .card-grid .project .project-column:nth-child(3) .card {
-  margin-top: 20%;
-  width: 80%;
+  margin-top: 11%;
+  width: 70%;
   margin-left: auto;
 }
 .card-grid .project .project-column:nth-child(3) .card-thumbnail {
-  padding-top: 80%;
+  padding-top: 65%;
 }
 .card-grid .project .project-column:nth-child(3) .card-content {
   color: #fff;
@@ -14522,7 +14572,7 @@ article img {
 }
 .card-grid .project .project-column:nth-child(4) .card {
   width: 60%;
-  margin: 0 auto;
+  margin: -26% auto 0 auto;
 }
 @media (max-width: 1279.98px) {
   .card-grid .project .project-column:nth-child(4) .card {
@@ -14540,6 +14590,7 @@ article img {
   .card-grid .project .project-column .card {
     width: 100% !important;
     margin-top: 30px !important;
+    margin-left: 0 !important;
   }
   .card-grid .project .project-column .card-thumbnail {
     padding-top: 80% !important;

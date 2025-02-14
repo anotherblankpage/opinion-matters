@@ -6,9 +6,9 @@
     @include Transition;
     .nav-link {
         display: inline-block;
-        margin-left: 24px;
+        margin-left: 12px;
         @include media-breakpoint-down(md) {
-            margin-left: 12px;
+            margin-left: 10px;
         }
         &:first-child {
             margin-left: 0;
@@ -27,6 +27,13 @@
     }
     .pill-btn {
         padding: 12px 20px;
+        line-height: 1;
+        i {
+            font-family: "Font Awesome 6 Pro";
+            font-size: .7rem;
+            position: relative;
+            top: -2px;
+        }
     }
     &.flex-row-reverse {
         .nav-link {
@@ -40,6 +47,16 @@
     }
     a {
         text-decoration: none;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-toggle::after {
+        margin-left: 0.5em;
+    }
+    .dropdown-menu {
+        border: none;
+        background-color: transparent;
     }
 }
 .logged-in {

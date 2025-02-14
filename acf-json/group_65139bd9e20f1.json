@@ -73,30 +73,25 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_66da16f026f6a",
-            "label": "Logo Footer",
-            "name": "logo_footer",
+            "key": "field_67ad5b5738788",
+            "label": "Call to Action",
+            "name": "call_to_action",
             "aria-label": "",
-            "type": "image",
-            "instructions": "If no logo provided, will use the logo or logo white instead",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33.33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 1,
-            "preview_size": "medium"
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_6584986bbc24f",
@@ -464,5 +459,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725568703
+    "modified": 1739414381
 }
